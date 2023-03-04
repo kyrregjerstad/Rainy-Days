@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-primary-light: #6e8687;
+  --clr-primary-medium: #6e8687;
+  --clr-primary-dark: #3c5153;
+
+  --clr-primary-semi-trans: #6e86874e;
+
+  --clr-button-icon: var(--clr-primary-dark);
+
+  --clr-button-favorite-active: var(--clr-primary-dark);
+  --clr-button-favorite-inactive: var(--clr-primary-semi-trans);
+
+  --clr-white: #fff;
+  --clr-medium-white: #ebeff1;
+  --clr-black: #000;
+
+  --transition-1: all 0.3s ease-in-out;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  color: var(--clr-white);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--clr-primary-light);
+  color: var(--clr-white);
+  background: linear-gradient(
+    180deg,
+    rgba(110, 134, 135, 1) 0%,
+    rgba(60, 81, 83, 1) 100%
+  );
+  min-height: 100vh;
+}
+
+span {
+  font-family: "Material Icons Outlined";
+  color: var(--clr-button-icon);
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.icon-button {
+  font-size: 1.5rem;
+  background: transparent;
+}
+
+.general-buttons {
+  background-color: var(--clr-primary-light);
+  border: none;
+  padding: 1rem;
+}

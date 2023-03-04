@@ -1,0 +1,175 @@
+// @ts-nocheck
+
+export const inventory = [
+  {
+    id: "KWP1VF-zPtOO",
+    isFeatured: true,
+    name: "Stormbreaker",
+    description:
+      "A waterproof and breathable jacket designed for hiking and camping. Made from durable materials, this jacket will keep you comfortable in any weather conditions.",
+    availableColors: ["Black", "Navy", "Green"],
+    price: 129.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Men",
+    season: ["Spring", "Autumn"],
+    features: [
+      "Adjustable hood",
+      "Pit zips for ventilation",
+      "Adjustable cuffs",
+    ],
+  },
+  {
+    id: "7sY-NQbaGGKp",
+    isFeatured: false,
+    name: "Arctic Explorer",
+    description:
+      "A high-performance jacket designed for extreme weather conditions. Made from premium materials, this jacket will keep you warm and dry in even the coldest environments.",
+    availableColors: ["Black", "Blue", "Red"],
+    price: 299.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Men",
+    season: ["Winter"],
+    features: [
+      "Removable hood with faux fur trim",
+      "Insulated lining",
+      "Adjustable waist and hem",
+    ],
+  },
+  {
+    id: "l6gtxAyIny-C",
+    isFeatured: true,
+    name: "Rainforest Runner",
+    description:
+      "A lightweight and packable jacket designed for runners and other outdoor athletes. Made from breathable materials, this jacket is perfect for staying dry during intense activity.",
+    availableColors: ["Gray", "Yellow", "Orange"],
+    price: 89.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Women",
+    season: ["Spring", "Summer"],
+    features: [
+      "Zippered pockets",
+      "Reflective detailing for visibility",
+      "Elastic cuffs and hem",
+    ],
+  },
+  {
+    id: "hu9zVzUTXKCH",
+    isFeatured: true,
+    name: "Trailblazer",
+    description:
+      "A versatile jacket designed for a variety of outdoor activities. Made from waterproof and windproof materials, this jacket can handle anything from hiking to kayaking.",
+    availableColors: ["Black", "Purple", "Green"],
+    price: 149.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Unisex",
+    season: ["Autumn"],
+    features: [
+      "Adjustable hood and hem",
+      "Zippered pockets",
+      "Articulated elbows for range of motion",
+    ],
+  },
+  {
+    id: "LNzxw-zTD0u2",
+    isFeatured: false,
+    name: "Mountain Peak",
+    description:
+      "A rugged and durable jacket designed for mountaineering and other extreme outdoor activities. Made from heavy-duty materials, this jacket is built to withstand harsh weather conditions.",
+    availableColors: ["Black", "Gray", "Red"],
+    price: 399.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Men",
+    season: ["Winter"],
+    features: [
+      "Helmet-compatible hood",
+      "Powder skirt to keep snow out",
+      "Reinforced elbows and shoulders",
+    ],
+  },
+  {
+    id: "y5QvYShzlJ-w",
+    isFeatured: false,
+    name: "Rainy Day",
+    description:
+      "A classic and timeless rain jacket designed for everyday wear. Made from water-resistant materials, this jacket is a must-have for anyone who wants to stay dry in style.",
+    availableColors: ["Navy", "Gray", "Yellow"],
+    price: 99.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Women",
+    season: ["Spring", "Autumn"],
+    features: [
+      "Adjustable hood and cuffs",
+      "Zippered pockets",
+      "Breathable mesh lining",
+    ],
+  },
+  {
+    id: "nbPd_vwx3aLZ",
+    isFeatured: false,
+    name: "Explorer",
+    description:
+      "A mid-weight jacket designed for exploring the great outdoors. Made from breathable and moisture-wicking materials, this jacket is perfect for a variety of outdoor activities.",
+    isFeatured: false,
+    availableColors: ["Green", "Blue", "Orange"],
+    price: 119.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Unisex",
+    season: ["Spring", "Autumn"],
+    features: [
+      "Adjustable hood and cuffs",
+      "Zippered pockets",
+      "Elastic hem for a secure fit",
+    ],
+  },
+  {
+    id: "WkQEEEu_e8CK",
+    isFeatured: false,
+    name: "Snowbird",
+    description:
+      "A heavy-duty jacket designed for skiing and other winter sports. Made from waterproof and windproof materials, this jacket will keep you warm and dry on the slopes.",
+    availableColors: ["Black", "Purple", "Blue"],
+    price: 249.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Women",
+    season: ["Winter"],
+    features: [
+      "Removable powder skirt",
+      "Ski pass pocket on sleeve",
+      "Internal media pocket with headphone port",
+    ],
+  },
+  {
+    id: "dqu2KYjDkHms",
+    isFeatured: false,
+    name: "Rain or Shine",
+    description:
+      "A versatile jacket designed for a variety of weather conditions. Made from water-resistant and breathable materials, this jacket can handle anything from a light drizzle to a heavy downpour.",
+    availableColors: ["Black", "Gray", "Orange"],
+    price: 139.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Unisex",
+    season: ["Spring", "Autumn"],
+    features: [
+      "Adjustable hood and hem",
+      "Zippered pockets",
+      "Articulated elbows for range of motion",
+    ],
+  },
+  {
+    id: "CwOWGmzF0xoK",
+    isFeatured: false,
+    name: "Winter Explorer",
+    description:
+      "A warm and comfortable jacket designed for winter adventures. Made from insulated materials, this jacket will keep you cozy on even the coldest days.",
+    availableColors: ["Black", "Green", "Red"],
+    price: 199.99,
+    availableSizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gender: "Men",
+    season: ["Winter"],
+    features: [
+      "Adjustable hood and cuffs",
+      "Zippered pockets",
+      "Internal snow skirt",
+    ],
+  },
+];
