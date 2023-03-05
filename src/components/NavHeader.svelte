@@ -1,9 +1,10 @@
 <script>
   import "@fontsource/material-icons-outlined";
-  import { bind } from "svelte/internal";
   import HoverCart from "./cart/HoverCart.svelte";
 
   let cartIsHidden = true;
+
+  let searchIsHidden = true;
 </script>
 
 <!-- <HoverCart bind:cartIsHidden /> -->
@@ -17,7 +18,12 @@
   <div>
     <ul>
       <li>
-        <a href="/#"><span class="material-symbols-outlined"> search </span></a>
+        <input type="search" name="search" id="" class:searchIsHidden />
+        <button
+          class="icon-button"
+          on:click={() => (searchIsHidden = !searchIsHidden)}
+          ><span class="material-symbols-outlined"> search </span></button
+        >
       </li>
       <li>
         <a href="/favourites"
@@ -37,7 +43,7 @@
   nav {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,7 +70,19 @@
   }
 
   li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+  }
+
+  input {
+    padding: 0.2rem;
+    margin-right: 1rem;
+  }
+
+  .searchIsHidden {
+    display: none;
   }
 
   #home {

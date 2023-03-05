@@ -41,8 +41,6 @@
   $: isInCart = quantity >= 1;
 
   $: quantity > 0, handleCart(productId, quantity);
-
-  $cart, console.log($cart);
 </script>
 
 <div>
@@ -56,8 +54,22 @@
 </div>
 
 <style>
+  div {
+    z-index: 10;
+  }
   button {
     font-size: 1.5rem;
+  }
+
+  button:hover::before {
+    content: "Add to cart";
+    background-color: var(--clr-primary-dark);
+    color: var(--clr-white);
+    padding: 0.25rem;
+    font-size: 1rem;
+    height: 1rem;
+    width: 5rem;
+    top: 0;
   }
 
   span {

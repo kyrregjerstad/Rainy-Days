@@ -1,6 +1,8 @@
 <script>
   import { inventory } from "@stores/inventory";
   import { cart } from "@stores/shopping-cart";
+  import ColorSelector from "../../../components/ColorSelectorButtons.svelte";
+  import ColorSelectorGroup from "../../../components/ColorSelectorGroup.svelte";
 
   /** @type {import('./$types').LayoutData} */
   export let data;
@@ -19,6 +21,8 @@
     (item) => item.name.toLowerCase() === productName.toLowerCase()
   );
 
+  let availableColors = product.availableColors;
+
   function addToCart(productId) {
     $cart = [...$cart, { id: productId, quantity: 1 }];
   }
@@ -32,11 +36,8 @@
     <h1>{product.name}</h1>
     <p>€{product.price}</p>
     <p>{product.description}</p>
-    <h2>Colour</h2>
     <div class="available-colors">
-      {#each product.availableColors as color}
-        <div>{color}</div>
-      {/each}
+      <ColorSelectorGroup {availableColors} />
     </div>
     <h2>Size</h2>
     <div>

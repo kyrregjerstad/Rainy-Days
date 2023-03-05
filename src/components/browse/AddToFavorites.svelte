@@ -42,8 +42,26 @@
 </div>
 
 <style>
+  div {
+    z-index: 10;
+  }
+
   span {
     color: var(--clr-button-favorite-inactive);
+  }
+
+  button:hover::after {
+    content: "Add to favorites";
+    background-color: var(--clr-primary-dark);
+    color: var(--clr-white);
+    padding: 0.25rem;
+    font-size: 1rem;
+    height: 1rem;
+    width: 5rem;
+    top: 0;
+  }
+  button:has(.isFavorite):hover::after {
+    content: "Remove from favorites";
   }
 
   .isFavorite {

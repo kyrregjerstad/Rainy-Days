@@ -54,6 +54,21 @@
 <style>
   .product-container {
     position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-container img {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .product-container:hover img {
+    transform: scale(1.02);
+    z-index: 0;
+  }
+
+  .product-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
     margin-bottom: 1rem;
   }
 
@@ -66,6 +81,7 @@
   }
 
   .featured-title {
+    z-index: 10;
     position: absolute;
     margin: 1rem;
     color: var(--clr-black);

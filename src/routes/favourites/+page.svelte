@@ -4,7 +4,7 @@
   import { inventory } from "@stores/inventory";
 </script>
 
-<div>
+<div class="user-favorites">
   {#each $userFavorites as favorite}
     {#each inventory as product}
       {#if product.id === favorite.id}
@@ -17,3 +17,12 @@
     {/each}
   {/each}
 </div>
+
+<style>
+  .user-favorites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
+</style>
