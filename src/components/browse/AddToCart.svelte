@@ -75,4 +75,10 @@
   span {
     color: var(--clr-button-icon);
   }
+
+  @media (max-width: 600px) {
+    button {
+      font-size: 2.5rem;
+    }
+  }
 </style>

@@ -23,25 +23,25 @@
 <style>
   .featured-products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
     padding: 0;
-    margin: 1rem;
+    margin-block: 5rem;
+    margin-inline: 2rem;
   }
 
-  .product {
-    background-color: var(--clr-white);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  @media (max-width: 900px) {
+    .featured-products {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin-block: 3rem;
+    }
   }
 
-  .featured-product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .product-text {
-    position: absolute;
-    margin: 1rem;
+  @media (max-width: 600px) {
+    .featured-products {
+      margin-block: 2.5rem;
+      margin-inline: 1rem;
+    }
   }
 </style>

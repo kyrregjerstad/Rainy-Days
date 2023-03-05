@@ -123,7 +123,7 @@ export const inventory = [
   },
   {
     id: "WkQEEEu_e8CK",
-    isFeatured: false,
+    isFeatured: true,
     name: "Snowbird",
     description:
       "A heavy-duty jacket designed for skiing and other winter sports. Made from waterproof and windproof materials, this jacket will keep you warm and dry on the slopes.",

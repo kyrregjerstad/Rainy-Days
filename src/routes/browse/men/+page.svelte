@@ -63,9 +63,4 @@
     margin-top: 5rem;
     margin-inline: 1rem;
   }
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-  }
 </style>

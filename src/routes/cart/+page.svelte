@@ -1,5 +1,6 @@
 <script>
   import OrderItem from "../../components/cart/orderItem.svelte";
+  import FeaturedCollections from "../../components/FeaturedCollections.svelte";
   import { cart } from "../../stores/shopping-cart";
 
   let totalPrice = 0;
@@ -13,7 +14,8 @@
 
 <div class="cart-page">
   <section>
-    <div>Other products you might like</div>
+    <h2>Other products you might like</h2>
+    <FeaturedCollections />
   </section>
   <section class="cart-wrapper">
     <div class="cart">
@@ -50,9 +52,8 @@
 
 <style>
   .cart-page {
-    display: flex;
-    gap: 2rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 600px;
   }
 
   hr {

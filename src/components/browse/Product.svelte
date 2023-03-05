@@ -54,7 +54,6 @@
 <style>
   .product-container {
     position: relative;
-    margin-bottom: 1.5rem;
   }
 
   .product-container img {
@@ -69,7 +68,6 @@
   .product-image {
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    margin-bottom: 1rem;
   }
 
   .buttons {
@@ -81,6 +79,7 @@
   }
 
   .featured-title {
+    word-spacing: 100vw;
     z-index: 10;
     position: absolute;
     margin: 1rem;
