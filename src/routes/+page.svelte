@@ -4,6 +4,7 @@
   import FeaturedText from "../components/FeaturedText.svelte";
   import Footer from "../components/Footer.svelte";
   import HeroImage from "../components/HeroImage.svelte";
+  import TextBlock from "../components/TextBlock.svelte";
 </script>
 
 <HeroImage />
@@ -20,6 +21,7 @@
     />
   </div>
 </section>
+<TextBlock />
 
 <style>
   section {
