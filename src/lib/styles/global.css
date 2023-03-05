@@ -53,7 +53,7 @@ body {
   min-height: 100vh;
 }
 
-span {
+.material-symbols-outlined {
   font-family: "Material Icons Outlined";
   color: var(--clr-button-icon);
 }
@@ -69,7 +69,7 @@ button {
   background: transparent;
 }
 
-.general-buttons {
+.general-button {
   background-color: var(--clr-primary-light);
   border: none;
   padding: 1rem;

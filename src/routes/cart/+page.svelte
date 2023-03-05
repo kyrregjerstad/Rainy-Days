@@ -39,7 +39,9 @@
               <p class="total-sum">€{totalPrice}</p>
             </div>
           </div>
-          <button class="checkout-button">Checkout</button>
+          <a href="/checkout/address"
+            ><button class="checkout-button">Checkout</button></a
+          >
         {/if}
       </div>
     </div>

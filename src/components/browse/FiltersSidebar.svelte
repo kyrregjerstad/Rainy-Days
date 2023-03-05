@@ -221,8 +221,8 @@
   </section>
 
   <div class="buttons">
-    <button on:click={resetFilters} class="general-buttons">Clear </button>
-    <button on:click={saveFilters} class="general-buttons">Save</button>
+    <button on:click={resetFilters} class="general-button">Clear </button>
+    <button on:click={saveFilters} class="general-button">Save</button>
   </div>
 </div>
 

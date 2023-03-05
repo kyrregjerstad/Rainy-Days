@@ -1,8 +1,7 @@
 <footer>
   <ul>
     <li><a href="/">About</a></li>
-    <li><a href="/">Contact</a></li>
-    <li><a href="/">Contact</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
 </footer>
 
