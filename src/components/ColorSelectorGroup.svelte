@@ -8,7 +8,7 @@
 
 <div>
   <h2>Colour</h2>
-  <div class="colors" on:click={() => console.log(selectedColor)}>
+  <div class="colors">
     {#each availableColors as color}
       <ColorSelectorButtons {color} selectedColor={color} />
     {/each}
@@ -16,11 +16,14 @@
 </div>
 
 <style>
+  h2 {
+    font-weight: 500;
+  }
   .colors {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-block: 1rem;
+    margin-block-start: 1rem;
     gap: 2rem;
   }
 </style>

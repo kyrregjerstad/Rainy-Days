@@ -13,10 +13,6 @@
 
   console.log(productName);
 
-  /* 
-  find the correct item from inventroy based on the product name
-  */
-
   let product = inventory.find(
     (item) => item.name.toLowerCase() === productName.toLowerCase()
   );
@@ -94,5 +90,11 @@
     background-color: var(--clr-primary-dark);
     padding: 1rem;
     margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .product-page {
+      flex-direction: column;
+    }
   }
 </style>
