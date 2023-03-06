@@ -50,22 +50,33 @@
     color: var(--clr-button-favorite-inactive);
   }
 
-  button:hover::after {
-    content: "Add to favorites";
-    background-color: var(--clr-primary-dark);
-    color: var(--clr-white);
-    padding: 0.25rem;
-    font-size: 1rem;
-    height: 1rem;
-    width: 5rem;
-    top: 0;
-  }
-  button:has(.isFavorite):hover::after {
-    content: "Remove from favorites";
-  }
-
   .isFavorite {
     color: var(--clr-button-favorite-active);
+  }
+
+  .icon-button {
+    display: flex;
+  }
+
+  @media (min-width: 600px) {
+    button::after {
+      content: "";
+      opacity: 0;
+      transition: opacity 350ms 350ms ease-in-out;
+    }
+    button:hover::after {
+      content: "Add to favorites";
+      background-color: var(--clr-primary-dark);
+      color: var(--clr-white);
+      padding: 0.25rem;
+      font-size: 1rem;
+      display: block;
+      text-align: left;
+      opacity: 1;
+    }
+    button:has(.isFavorite):hover::after {
+      content: "Remove from favorites";
+    }
   }
 
   @media (max-width: 600px) {

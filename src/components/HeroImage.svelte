@@ -30,8 +30,6 @@
     outputRangeMin,
     outputRangeMax
   ).toFixed(4);
-
-  $: scaledValue, console.log(scaledValue);
 </script>
 
 <svelte:window bind:scrollY />

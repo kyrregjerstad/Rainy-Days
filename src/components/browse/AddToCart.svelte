@@ -61,19 +61,25 @@
     font-size: 1.5rem;
   }
 
-  button:hover::before {
-    content: "Add to cart";
-    background-color: var(--clr-primary-dark);
-    color: var(--clr-white);
-    padding: 0.25rem;
-    font-size: 1rem;
-    height: 1rem;
-    width: 5rem;
-    top: 0;
-  }
-
   span {
     color: var(--clr-button-icon);
+  }
+
+  @media (min-width: 600px) {
+    button::after {
+      content: "";
+      opacity: 0;
+      transition: opacity 350ms 350ms ease-in-out;
+    }
+
+    button:hover::before {
+      content: "Add to cart";
+      background-color: var(--clr-primary-dark);
+      color: var(--clr-white);
+      padding: 0.25rem;
+      font-size: 1rem;
+      opacity: 1;
+    }
   }
 
   @media (max-width: 600px) {
