@@ -3,6 +3,7 @@
   import { cart } from "@stores/shopping-cart";
   import ColorSelector from "../../../components/ColorSelectorButtons.svelte";
   import ColorSelectorGroup from "../../../components/ColorSelectorGroup.svelte";
+  import SizeSelectorGroup from "../../../components/SizeSelectorGroup.svelte";
 
   /** @type {import('./$types').LayoutData} */
   export let data;
@@ -11,16 +12,28 @@
 
   productName = productName.replace(/%20/g, " ");
 
-  console.log(productName);
-
   let product = inventory.find(
     (item) => item.name.toLowerCase() === productName.toLowerCase()
   );
 
-  let availableColors = product.availableColors;
+  let { availableColors, availableSizes } = product;
 
-  function addToCart(productId) {
-    $cart = [...$cart, { id: productId, quantity: 1 }];
+  let selectedSize;
+  let selectedColor;
+
+  function cartHandler(product, selectedSize, selectedColor) {
+    if (selectedSize && selectedColor) {
+      addToCart(product.id, selectedSize, selectedColor);
+    } else {
+      alert("Please select a size and color");
+    }
+  }
+
+  function addToCart(productId, selectedSize, selectedColor) {
+    $cart = [
+      ...$cart,
+      { id: productId, quantity: 1, size: selectedSize, color: selectedColor },
+    ];
   }
 </script>
 
@@ -33,15 +46,14 @@
     <p>€{product.price}</p>
     <p>{product.description}</p>
     <div class="available-colors">
-      <ColorSelectorGroup {availableColors} />
+      <ColorSelectorGroup {availableColors} bind:selectedColor />
     </div>
-    <h2>Size</h2>
     <div>
-      {#each product.availableSizes as size}
-        <button class="size-button">{size}</button>
-      {/each}
+      <SizeSelectorGroup {availableSizes} bind:selectedSize />
     </div>
-    <button class="add-to-cart" on:click={() => addToCart(product.id)}
+    <button
+      class="add-to-cart"
+      on:click={() => cartHandler(product, selectedSize, selectedColor)}
       >Add To Cart</button
     >
   </section>
@@ -59,12 +71,6 @@
     font-size: 2rem;
   }
 
-  h2 {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-
   .product-text {
     display: flex;
     flex-direction: column;
@@ -75,13 +81,6 @@
   .available-colors {
     display: flex;
     gap: 1rem;
-  }
-
-  .size-button {
-    background-color: var(--clr-primary-dark);
-    color: var(--clr-white);
-    padding: 0.75rem;
-    margin-right: 0.5rem;
   }
 
   .add-to-cart {

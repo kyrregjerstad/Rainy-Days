@@ -1,7 +1,10 @@
 <section class="featured-collections">
   <div class="collection">
     <div class="image-wrapper">
-      <a class="general-button" href="/collection">View Collection</a>
+      <div class="featured-text">
+        <h3>Peak Performance</h3>
+        <a class="general-button" href="/collection">View Collection</a>
+      </div>
       <img
         class="featured-product-img"
         src="/assets/images/collections/collection-1.png"
@@ -11,7 +14,10 @@
   </div>
   <div class="collection">
     <div class="image-wrapper">
-      <a class="general-button" href="/collection">View Collection</a>
+      <div class="featured-text">
+        <h3>Wanderlust Essentials</h3>
+        <a class="general-button" href="/collection">View Collection</a>
+      </div>
       <img
         class="featured-product-img"
         src="/assets/images/collections/collection-2.png"
@@ -29,17 +35,11 @@
   }
 
   .general-button {
-    position: absolute;
     font-size: 1.3rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: var(--clr-white);
     color: var(--clr-black);
     padding: 1rem 1rem;
     transition: all 0.3s ease-in-out;
-    z-index: 10;
-    opacity: 0;
   }
 
   .featured-collections {
@@ -54,12 +54,38 @@
     transition: all 0.3s ease-in-out;
   }
   .featured-product-img:hover,
-  .general-button:hover + .featured-product-img {
+  .featured-text:hover + .featured-product-img {
     transform: scale(1.02);
-    filter: brightness(0.3);
+    filter: brightness(0.5) blur(3px);
   }
 
-  .image-wrapper:hover > .general-button {
+  .featured-text:hover > .general-button {
+    opacity: 1;
+  }
+
+  .featured-text {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+
+    transition: all 0.3s 0.1s ease-in-out;
+  }
+
+  .featured-text h3 {
+    font-size: 2rem;
+  }
+
+  .featured-text:hover {
     opacity: 1;
   }
 

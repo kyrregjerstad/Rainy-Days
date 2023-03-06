@@ -3,27 +3,24 @@
 
   export let availableColors = [];
 
-  let selectedColor;
+  export let selectedColor;
 </script>
 
 <div>
   <h2>Colour</h2>
   <div class="colors">
     {#each availableColors as color}
-      <ColorSelectorButtons {color} selectedColor={color} />
+      <ColorSelectorButtons {color} bind:selectedColor />
     {/each}
   </div>
 </div>
 
 <style>
   h2 {
-    font-weight: 500;
+    margin-bottom: 0.5rem;
   }
   .colors {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-block-start: 1rem;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 </style>
