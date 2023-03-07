@@ -7,7 +7,7 @@
   import TextBlock from "../components/TextBlock.svelte";
 </script>
 
-<HeroImage />
+<HeroImage title={"Adventure Awaits"} hasCTA />
 <FeaturedProducts />
 <FeaturedCollections />
 <FeaturedText />

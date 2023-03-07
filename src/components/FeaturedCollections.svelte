@@ -3,7 +3,7 @@
     <div class="image-wrapper">
       <div class="featured-text">
         <h3>Peak Performance</h3>
-        <a class="general-button" href="/collection">View Collection</a>
+        <a class="general-button" href="/browse/collections">View Collection</a>
       </div>
       <img
         class="featured-product-img"
@@ -16,7 +16,7 @@
     <div class="image-wrapper">
       <div class="featured-text">
         <h3>Wanderlust Essentials</h3>
-        <a class="general-button" href="/collection">View Collection</a>
+        <a class="general-button" href="/browse/collections">View Collection</a>
       </div>
       <img
         class="featured-product-img"
@@ -91,5 +91,11 @@
 
   .collection {
     aspect-ratio: 1/1;
+  }
+
+  @media (max-width: 600px) {
+    .featured-collections {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 </style>

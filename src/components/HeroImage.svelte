@@ -4,6 +4,8 @@
   export let title = "Rainy Days";
   export let subtitle = "";
   export let src = "/assets/images/hero/hero-4.webp";
+  export let hasCTA = false;
+  export let hasParallax = true;
 
   const imageParallax = new Parallax({
     speed: 0.8,
@@ -23,8 +25,14 @@
   let imageTransform;
   let textTransform;
 
-  $: scrollY, (imageTransform = imageParallax.getTransform(scrollY));
-  $: scrollY, (textTransform = textParallax.getTransform(scrollY));
+  $: scrollY,
+    hasParallax
+      ? (imageTransform = imageParallax.getTransform(scrollY))
+      : (imageTransform = "");
+  $: scrollY,
+    hasParallax
+      ? (textTransform = textParallax.getTransform(scrollY))
+      : (textTransform = "");
 </script>
 
 <svelte:window bind:scrollY />
@@ -33,6 +41,9 @@
   <div class="text" style:transform={textTransform}>
     <h1>{title}</h1>
     <h2>{subtitle}</h2>
+    {#if hasCTA}
+      <a class="CTA-button" href="/browse/collections">Browse Collections</a>
+    {/if}
   </div>
   <div class="image-container">
     <img {src} alt="{title} hero image" style:transform={imageTransform} />
@@ -40,14 +51,28 @@
 </section>
 
 <style>
+  .CTA-button {
+    font-size: clamp(1rem, 3vw, 5rem);
+    background-color: var(--clr-primary-dark);
+    padding: 1rem;
+    text-transform: uppercase;
+  }
+  .hero:has(.CTA-button:hover) .image-container {
+    transform: scale(1.025);
+    filter: blur(2px) brightness(0.7);
+  }
   .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
     position: absolute;
     color: var(--clr-white);
     margin: 2rem;
     z-index: 10;
   }
   .text h1 {
-    font-size: 7vw;
+    font-size: clamp(1.125rem, 7vw, 10rem);
     text-transform: uppercase;
   }
   .text h2 {
@@ -58,7 +83,7 @@
     overflow: hidden;
     object-fit: contain;
     object-position: 100% 100%;
-    /* height: 10vh; */
+    transition: all 0.5s ease;
   }
 
   .hero {

@@ -30,7 +30,7 @@
     margin-inline: 2rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1300px) {
     .featured-products {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1rem;
@@ -38,9 +38,9 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     .featured-products {
-      margin-block: 2.5rem;
+      grid-template-columns: repeat(1, 1fr);
       margin-inline: 1rem;
     }
   }

@@ -14,6 +14,7 @@
     <li><a href="/" id="home">Rainy Days</a></li>
     <li><a href="/browse/men">men</a></li>
     <li><a href="/browse/women">women</a></li>
+    <li><a href="/browse/collections">collections</a></li>
   </ul>
   <div>
     <ul>
