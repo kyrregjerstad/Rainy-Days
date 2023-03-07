@@ -1,52 +1,41 @@
 <script>
-  import { bind } from "svelte/internal";
+  import Parallax from "$lib/scripts/animation/parallax";
 
   export let title = "Rainy Days";
   export let subtitle = "";
-  export let imgSrc = "/assets/images/hero/hero-4.webp";
+  export let src = "/assets/images/hero/hero-4.webp";
+
+  const imageParallax = new Parallax({
+    speed: 0.8,
+    range: 500,
+    outputRange: [1, 1.2],
+    scale: true,
+  });
+
+  const textParallax = new Parallax({
+    speed: 1,
+    range: 500,
+    outputRange: [1, 1.2],
+    scale: false,
+  });
 
   let scrollY;
-  let speed = 0.5;
+  let imageTransform;
+  let textTransform;
 
-  const scrollRangeMin = 0;
-  const scrollRangeMax = 500;
-
-  const outputRangeMin = 1;
-  const outputRangeMax = 1.2;
-
-  const mapRange = (value, inMin, inMax, outMin, outMax) =>
-    ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-
-  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
-  $: scaledValue = clamp(
-    mapRange(
-      scrollY,
-      scrollRangeMin,
-      scrollRangeMax,
-      outputRangeMin,
-      outputRangeMax
-    ),
-    outputRangeMin,
-    outputRangeMax
-  ).toFixed(4);
+  $: scrollY, (imageTransform = imageParallax.getTransform(scrollY));
+  $: scrollY, (textTransform = textParallax.getTransform(scrollY));
 </script>
 
 <svelte:window bind:scrollY />
 
 <section class="hero">
-  <div class="text" style:transform={`translate3d(0, ${scrollY}px, 0)`}>
+  <div class="text" style:transform={textTransform}>
     <h1>{title}</h1>
     <h2>{subtitle}</h2>
   </div>
   <div class="image-container">
-    <img
-      src={imgSrc}
-      alt="{title} hero image"
-      style:transform={`translate3d(0, ${
-        scrollY * speed
-      }px, 0) scale3d(${scaledValue}, ${scaledValue}, 1)`}
-    />
+    <img {src} alt="{title} hero image" style:transform={imageTransform} />
   </div>
 </section>
 

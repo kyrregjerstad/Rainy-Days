@@ -3,44 +3,20 @@
 
   import Product from "@components/browse/Product.svelte";
   import { inventory } from "@stores/inventory";
-  import {
-    sortByPriceAscending,
-    sortByPriceDescending,
-    sortByColor,
-    sortBySize,
-    sortBySeason,
-  } from "@utils/sorting";
+  import { sortInventory } from "@utils/sorting";
   import FilterAndSortButton from "@components/browse/FilterAndSortButton.svelte";
   import { filterOptions } from "@stores/searchFilters";
   import HeroImage from "../../../components/HeroImage.svelte";
 
   let sortedInventory = inventory;
 
-  $: $filterOptions, sortInventory(inventory, $filterOptions);
-
-  function sortInventory(inventory, filterOptions) {
-    sortedInventory = inventory;
-    if (filterOptions.selectedSeasons.length) {
-      sortedInventory = sortBySeason(inventory, filterOptions.selectedSeasons);
-    }
-    if (filterOptions.selectedColors.length) {
-      sortedInventory = sortByColor(inventory, filterOptions.selectedColors);
-    }
-    if (filterOptions.selectedSizes.length) {
-      sortedInventory = sortBySize(inventory, filterOptions.selectedSizes);
-    }
-    if (filterOptions.sortBy === "lowToHigh") {
-      sortedInventory = sortByPriceAscending(inventory);
-    }
-    if (filterOptions.sortBy === "highToLow") {
-      sortedInventory = sortByPriceDescending(inventory);
-    }
-  }
+  $: $filterOptions,
+    (sortedInventory = sortInventory(inventory, $filterOptions));
 </script>
 
 <HeroImage
   title={"Prepare for Adventure"}
-  imgSrc="/assets/images/hero/hero-29.webp"
+  src="/assets/images/hero/hero-29.webp"
 />
 
 <div class="page">
