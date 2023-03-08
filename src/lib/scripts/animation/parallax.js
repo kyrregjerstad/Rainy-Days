@@ -31,7 +31,7 @@ export default class Parallax {
     this.scrollY = scrollY;
   }
 
-  getTransform(scrollY) {
+  getTransform(scrollY, offsetHeight) {
     this.onScroll(scrollY);
     let transform = `translate3d(0, ${this.scrollY * this.speed}px, 0)`;
     if (this.scale) {

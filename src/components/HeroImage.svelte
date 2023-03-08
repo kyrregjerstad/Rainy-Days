@@ -25,19 +25,22 @@
   let imageTransform;
   let textTransform;
 
+  let clientHeight;
+  let offsetHeight;
+
   $: scrollY,
     hasParallax
-      ? (imageTransform = imageParallax.getTransform(scrollY))
+      ? (imageTransform = imageParallax.getTransform(scrollY, offsetHeight))
       : (imageTransform = "");
   $: scrollY,
     hasParallax
-      ? (textTransform = textParallax.getTransform(scrollY))
+      ? (textTransform = textParallax.getTransform(scrollY, offsetHeight))
       : (textTransform = "");
 </script>
 
 <svelte:window bind:scrollY />
 
-<section class="hero">
+<section class="hero" bind:clientHeight bind:offsetHeight>
   <div class="text" style:transform={textTransform}>
     <h1>{title}</h1>
     <h2>{subtitle}</h2>

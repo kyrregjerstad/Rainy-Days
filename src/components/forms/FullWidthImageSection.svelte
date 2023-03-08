@@ -5,19 +5,26 @@
   let springY = spring(scrollY, { stiffness: 0.2, damping: 0.8 });
 
   let speed = 0.2;
+  let offsetHeight;
+
+  $: offsetHeight, console.log(offsetHeight);
 
   let parallaxElement;
 </script>
 
 <svelte:window bind:scrollY />
 
-<section class="full-width-section" bind:this={parallaxElement}>
+<section
+  class="full-width-section"
+  bind:this={parallaxElement}
+  bind:offsetHeight
+>
   <div class="image-container">
     <img
       class="image-container"
       {src}
       alt=""
-      style:transform="translate3d(0, {(scrollY - 1420) * speed}px, 0)"
+      style:transform="translate3d(0, {scrollY * speed - 580}px, 0)"
     />
   </div>
 </section>
