@@ -4,6 +4,8 @@
 
   export let isFavorite = false;
   export let productId = 123;
+  export let tooltip = true;
+  export let fontSize = "1.5rem";
 
   function toggleFavorite() {
     if (isFavorite) {
@@ -36,8 +38,14 @@
 </script>
 
 <div>
-  <button class="icon-button" on:click={toggleFavorite}>
-    <span class="material-symbols-outlined" class:isFavorite> favorite </span>
+  <button class="icon-button" class:tooltip on:click={toggleFavorite}>
+    <span
+      class="material-symbols-outlined"
+      class:isFavorite
+      style="font-size: {fontSize};"
+    >
+      favorite
+    </span>
   </button>
 </div>
 
@@ -64,7 +72,7 @@
       opacity: 0;
       transition: opacity 350ms 350ms ease-in-out;
     }
-    button:hover::after {
+    .tooltip:hover::after {
       content: "Add to favorites";
       background-color: var(--clr-primary-dark);
       color: var(--clr-white);
@@ -74,7 +82,7 @@
       text-align: left;
       opacity: 1;
     }
-    button:has(.isFavorite):hover::after {
+    .tooltip:has(.isFavorite):hover::after {
       content: "Remove from favorites";
     }
   }

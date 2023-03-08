@@ -16,19 +16,16 @@
 
 <HeroImage title={"Peak Performance"} src="/assets/images/hero/hero-13.webp" />
 
-<div class="page">
-  <FilterAndSortButton />
-  <div class="products-grid">
-    {#each sortedInventory as product}
-      {#if product.gender === "Men" || product.gender === "Unisex"}
-        <Product
-          productName={product.name}
-          productPrice={product.price}
-          productId={product.id}
-        />
-      {/if}
-    {/each}
-  </div>
+<div class="products-grid">
+  {#each sortedInventory as product}
+    {#if product.gender === "Men" || product.gender === "Unisex"}
+      <Product
+        productName={product.name}
+        productPrice={product.price}
+        productId={product.id}
+      />
+    {/if}
+  {/each}
 </div>
 
 <HeroImage
@@ -37,9 +34,25 @@
   hasParallax={false}
 />
 
+<div class="products-grid">
+  {#each sortedInventory as product}
+    {#if product.gender === "Men" || product.gender === "Unisex"}
+      <Product
+        productName={product.name}
+        productPrice={product.price}
+        productId={product.id}
+      />
+    {/if}
+  {/each}
+</div>
+
 <style>
   .page {
     margin-top: 5rem;
     margin-inline: 1rem;
+  }
+
+  .products-grid {
+    margin: 4rem 1rem 4rem 1rem;
   }
 </style>

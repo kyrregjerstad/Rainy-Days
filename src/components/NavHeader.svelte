@@ -1,10 +1,25 @@
 <script>
   import "@fontsource/material-icons-outlined";
   import HoverCart from "./cart/HoverCart.svelte";
+  import { userFavorites } from "@stores/user-favorites";
 
   let cartIsHidden = true;
 
   let searchIsHidden = true;
+
+  let fontSize = 1.2;
+  let marginInline = 0;
+
+  function animateFavorites() {
+    fontSize = 1.5;
+    marginInline = -0.14;
+    setTimeout(() => {
+      fontSize = 1.2;
+      marginInline = 0;
+    }, 200);
+  }
+
+  $: $userFavorites, animateFavorites();
 </script>
 
 <!-- <HoverCart bind:cartIsHidden /> -->
@@ -28,7 +43,12 @@
       </li>
       <li>
         <a href="/favourites"
-          ><span class="material-symbols-outlined"> favorite </span></a
+          ><span
+            class="material-symbols-outlined"
+            style={`font-size: ${fontSize}rem; margin-inline: ${marginInline}rem;`}
+          >
+            favorite
+          </span></a
         >
       </li>
       <li>

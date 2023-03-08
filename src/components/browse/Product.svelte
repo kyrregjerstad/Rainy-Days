@@ -28,7 +28,6 @@
   {#if !isFeatured}
     <div class="buttons">
       <AddToFavorites bind:productId />
-      <AddToCart bind:productId />
     </div>
   {/if}
   {#if isFeatured}
