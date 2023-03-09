@@ -1,13 +1,9 @@
 <script>
-  import { spring } from "svelte/motion";
   let src = "/assets/images/hero/hero-27.webp";
   let scrollY;
-  let springY = spring(scrollY, { stiffness: 0.2, damping: 0.8 });
 
   let speed = 0.2;
   let offsetHeight;
-
-  $: offsetHeight, console.log(offsetHeight);
 
   let parallaxElement;
 </script>

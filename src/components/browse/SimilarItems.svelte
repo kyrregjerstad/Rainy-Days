@@ -1,5 +1,5 @@
 <script>
-  import Product from "./Product.svelte";
+  import Product from "@components/browse/Product.svelte";
   import { inventory } from "@stores/inventory";
 
   export let currentProductId;

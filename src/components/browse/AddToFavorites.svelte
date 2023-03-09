@@ -52,6 +52,7 @@
 <style>
   div {
     z-index: 10;
+    position: relative;
   }
 
   span {
@@ -71,6 +72,9 @@
       content: "";
       opacity: 0;
       transition: opacity 350ms 350ms ease-in-out;
+
+      position: absolute;
+      left: 2rem;
     }
     .tooltip:hover::after {
       content: "Add to favorites";

@@ -2,6 +2,7 @@
   import "@fontsource/material-icons-outlined";
   import HoverCart from "./cart/HoverCart.svelte";
   import { userFavorites } from "@stores/user-favorites";
+  import NavigationSidebar from "./NavigationSidebar.svelte";
 
   let cartIsHidden = true;
 
@@ -24,12 +25,19 @@
 
 <!-- <HoverCart bind:cartIsHidden /> -->
 
+<NavigationSidebar />
+
 <nav>
+  <button class="hamburger-menu icon-button">
+    <span class="material-symbols-outlined "> menu </span>
+  </button>
   <ul>
     <li><a href="/" id="home">Rainy Days</a></li>
-    <li><a href="/browse/men">men</a></li>
-    <li><a href="/browse/women">women</a></li>
-    <li><a href="/browse/collections">collections</a></li>
+    <li class="navigation-subpages"><a href="/browse/men">men</a></li>
+    <li class="navigation-subpages"><a href="/browse/women">women</a></li>
+    <li class="navigation-subpages">
+      <a href="/browse/collections">collections</a>
+    </li>
   </ul>
   <div>
     <ul>
@@ -102,6 +110,14 @@
     margin-right: 1rem;
   }
 
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .hamburger-menu span {
+    font-size: 2.5rem;
+  }
+
   .searchIsHidden {
     display: none;
   }
@@ -110,5 +126,19 @@
     text-transform: uppercase;
     font-weight: 700;
     margin-right: 1rem;
+  }
+
+  .navigation-subpages {
+    display: none;
+  }
+
+  @media (min-width: 600px) {
+    .hamburger-menu {
+      display: none;
+    }
+
+    .navigation-subpages {
+      display: block;
+    }
   }
 </style>

@@ -4,120 +4,114 @@
   import { cart } from "../../stores/shopping-cart";
 
   let totalPrice = 0;
-
+  let subtotal = 0;
+  let delivery = 0;
+  let totalQuantity = 0;
   let productPrice;
+
+  $: totalQuantity = $cart.reduce((acc, item) => {
+    return acc + parseInt(item.quantity, 10);
+  }, 0);
 
   $: totalPrice = $cart.reduce((acc, item) => {
     return acc + parseInt(productPrice, 10) * parseInt(item.quantity, 10);
   }, 0);
 </script>
 
-<div class="cart-page">
-  <section>
-    <h2>Other products you might like</h2>
-    <FeaturedCollections />
+<div class="shopping-bag">
+  <section class="order-items">
+    <h2>
+      Your shopping bag
+      {#if totalQuantity === 0}
+        is empty
+      {:else if totalQuantity === 1}
+        - {totalQuantity} item
+      {:else}
+        - {totalQuantity} items
+      {/if}
+    </h2>
+    {#each $cart as item (item.id)}
+      <OrderItem {item} bind:price={productPrice} />
+    {/each}
   </section>
-  <section class="cart-wrapper">
-    <div class="cart">
-      <div class="cart-header">
-        <h2>Cart</h2>
-        <hr />
-      </div>
-      <div class="order">
-        {#each $cart as item}
-          <OrderItem {item} bind:price={productPrice} />
-        {/each}
-      </div>
-      <div class="cart-footer">
-        {#if $cart.length === 0}
-          <div class="empty-cart">
-            <h3>Your cart is empty</h3>
-          </div>
-        {:else}
-          <div class="order-total">
-            <hr />
-            <div>
-              <h3 class="total-sum">Total</h3>
-              <p class="total-sum">€{totalPrice}</p>
-            </div>
-          </div>
-          <a href="/checkout/address"
-            ><button class="checkout-button">Checkout</button></a
-          >
-        {/if}
-      </div>
+  <section class="summary">
+    <h2>Total</h2>
+    <div>
+      <p>Subtotal</p>
+      <p>€{totalPrice}</p>
     </div>
+    <div>
+      <p>Delivery</p>
+      <p>€{delivery}</p>
+    </div>
+    <div class="order-total">
+      <p>Total (VAT included)</p>
+      <p>€{totalPrice}</p>
+    </div>
+    <hr />
+    <a class="checkout-button general-button" href="/checkout/address">
+      Checkout
+    </a>
   </section>
 </div>
 
 <style>
-  .cart-page {
+  .shopping-bag {
     display: grid;
-    grid-template-columns: 1fr 600px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    margin-block: 1rem;
+    color: black;
+    background-color: lightgray;
+    margin: 0 auto;
+
+    max-width: 1200px;
+  }
+
+  .order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    background-color: var(--clr-white);
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+
+    background-color: white;
+
+    max-height: 20rem;
+  }
+
+  .summary > * {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .order-total {
+    font-weight: 600;
   }
 
   hr {
     width: 100%;
-  }
-
-  h2 {
-    top: 0;
-    right: 0;
-    margin: 1rem;
-  }
-
-  .cart-wrapper {
-    position: fixed;
-    height: 100%;
-    right: 0;
-    height: 100vh;
-  }
-
-  .cart {
-    max-width: 600px;
-    border-left: 1px solid var(--clr-white);
-  }
-
-  .order-total {
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--clr-primary-dark);
-  }
-
-  .total-sum {
-    font-weight: 700;
-    margin-block-end: 1rem;
-  }
-
-  .order-total div {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 1rem;
-    margin-inline: 2rem;
-    margin-top: 1rem;
+    margin-block: 1rem;
+    border-top: transparent;
   }
 
   .checkout-button {
+    text-align: center;
+    justify-content: center;
     text-transform: uppercase;
     font-weight: 600;
-    width: 100%;
-    padding: 1rem;
-  }
 
-  .cart {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .order {
-    flex-grow: 1;
-    overflow-y: auto;
-  }
-
-  .cart-footer {
-    height: 10rem;
+    color: white;
   }
 </style>

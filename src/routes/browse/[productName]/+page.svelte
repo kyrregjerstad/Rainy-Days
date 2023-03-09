@@ -1,4 +1,6 @@
 <script>
+  import { page } from "$app/stores";
+
   import { inventory } from "@stores/inventory";
   import { cart } from "@stores/shopping-cart";
   import AddToFavorites from "../../../components/browse/AddToFavorites.svelte";
@@ -39,6 +41,8 @@
       { id: productId, quantity: 1, size: selectedSize, color: selectedColor },
     ];
   }
+
+  $: console.log({ slug: $page.params.productName });
 </script>
 
 <div class="page-wrapper">
