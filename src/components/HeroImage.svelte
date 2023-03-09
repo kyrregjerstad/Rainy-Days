@@ -6,10 +6,27 @@
   export let src = "/assets/images/hero/hero-4.webp";
   export let hasCTA = false;
   export let hasParallax = true;
+  export let height;
+
+  console.log(height);
+
+  switch (height) {
+    case "small":
+      height = "20vw";
+      break;
+    case "medium":
+      height = "40vw";
+      break;
+    case "large":
+      height = "50vw";
+      break;
+    default:
+      height = "unset";
+  }
 
   const imageParallax = new Parallax({
-    speed: 0.8,
-    range: 500,
+    speed: 0.5,
+    range: 800,
     outputRange: [1, 1.2],
     scale: true,
   });
@@ -40,7 +57,12 @@
 
 <svelte:window bind:scrollY />
 
-<section class="hero" bind:clientHeight bind:offsetHeight>
+<section
+  class="hero"
+  bind:clientHeight
+  bind:offsetHeight
+  style={`height: ${height}`}
+>
   <div class="text" style:transform={textTransform}>
     <h1>{title}</h1>
     <h2>{subtitle}</h2>
@@ -54,6 +76,10 @@
 </section>
 
 <style>
+  section {
+    max-height: 75vh;
+    max-height: 75dvh;
+  }
   .CTA-button {
     font-size: clamp(1rem, 3vw, 5rem);
     background-color: var(--clr-primary-dark);
@@ -87,6 +113,9 @@
     object-fit: contain;
     object-position: 100% 100%;
     transition: all 0.5s ease;
+  }
+  .image-container img {
+    width: 100%;
   }
 
   .hero {

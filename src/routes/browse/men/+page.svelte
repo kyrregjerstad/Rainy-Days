@@ -7,8 +7,11 @@
   import FilterAndSortButton from "@components/browse/FilterAndSortButton.svelte";
   import { filterOptions } from "@stores/searchFilters";
   import HeroImage from "../../../components/HeroImage.svelte";
+  import ActiveFilterLabel from "../../../components/browse/ActiveFilterLabel.svelte";
 
   let sortedInventory = inventory;
+
+  $: $filterOptions, console.log($filterOptions);
 
   $: $filterOptions,
     (sortedInventory = sortInventory(inventory, $filterOptions));
@@ -17,6 +20,7 @@
 <HeroImage
   title={"Prepare for Adventure"}
   src="/assets/images/hero/hero-29.webp"
+  height={"medium"}
 />
 
 <div class="page">

@@ -17,6 +17,7 @@
   title={"Adventure Awaits"}
   subtitle={"Designed to keep you comfortable in all weather"}
   src="/assets/images/hero/hero-22.webp"
+  height={"medium"}
 />
 
 <div class="page">
