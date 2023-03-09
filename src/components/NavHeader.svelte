@@ -1,4 +1,6 @@
 <script>
+  import { page } from "$app/stores";
+
   import "@fontsource/material-icons-outlined";
   import HoverCart from "./cart/HoverCart.svelte";
   import { userFavorites } from "@stores/user-favorites";
@@ -7,6 +9,7 @@
   let cartIsHidden = true;
 
   let searchIsHidden = true;
+  let navSidebarIsHidden = true;
 
   let fontSize = 1.2;
   let marginInline = 0;
@@ -21,14 +24,18 @@
   }
 
   $: $userFavorites, animateFavorites();
+  $: $page, (navSidebarIsHidden = true);
 </script>
 
 <!-- <HoverCart bind:cartIsHidden /> -->
 
-<NavigationSidebar />
+<NavigationSidebar bind:navSidebarIsHidden />
 
 <nav>
-  <button class="hamburger-menu icon-button">
+  <button
+    class="hamburger-menu icon-button"
+    on:click={() => (navSidebarIsHidden = !navSidebarIsHidden)}
+  >
     <span class="material-symbols-outlined "> menu </span>
   </button>
   <ul>
