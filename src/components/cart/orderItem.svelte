@@ -134,4 +134,10 @@
     outline: solid 1px var(--clr-primary-dark);
     border-radius: 5%;
   }
+
+  @media (max-width: 800px) {
+    .order-item-info {
+      padding: 1rem;
+    }
+  }
 </style>
