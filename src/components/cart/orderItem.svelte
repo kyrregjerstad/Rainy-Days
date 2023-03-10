@@ -6,6 +6,8 @@
   import { cubicOut, sineInOut } from "svelte/easing";
 
   export let item;
+  export let type = "cart";
+
   let { id, quantity, size, color } = item;
 
   let quantityString = quantity.toString();
@@ -44,33 +46,40 @@
       <h3>{inventoryProduct.name}</h3>
       <p>Size: {size}</p>
       <p>Colour: {color}</p>
-      <div class="buttons">
-        <button
-          class="remove-from-cart-button"
-          on:click={() => removeFromShoppingBag(id)}
-          ><span class="material-symbols-outlined"> delete </span></button
-        >
-        <div>|</div>
-        <AddToFavorites />
-      </div>
+      {#if type === "cart"}
+        <div class="buttons">
+          <button
+            class="remove-from-cart-button"
+            on:click={() => removeFromShoppingBag(id)}
+            ><span class="material-symbols-outlined"> delete </span></button
+          >
+          <div>|</div>
+          <AddToFavorites />
+        </div>
+      {/if}
     </div>
     <div class="quantity-price">
-      <select
-        name="quantity"
-        id=""
-        bind:value={quantityString}
-        on:change={() => updateQuantity()}
-      >
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-      </select>
+      {#if type === "cart"}
+        <select
+          name="quantity"
+          id=""
+          bind:value={quantityString}
+          on:change={() => updateQuantity()}
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      {/if}
+      {#if type === "checkout"}
+        <p>{quantity}</p>
+      {/if}
       <p>€{inventoryProduct.price * quantityString}</p>
     </div>
   </div>

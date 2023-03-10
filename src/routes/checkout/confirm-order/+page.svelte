@@ -11,17 +11,31 @@
 </script>
 
 <div class="wrapper">
-  <section class="address-section">
-    <h2>Address</h2>
-    <p>Your address info</p>
+  <section class="user-submitted-info">
+    <div>
+      <h2>Address</h2>
+      <p>Alice Kelly</p>
+      <p>23 Kirkgate</p>
+      <p>Thirsk</p>
+      <p>North Yorkshire</p>
+      <p>YO7 1PL</p>
+      <p>01845 524234</p>
+      <p>UK</p>
+    </div>
+    <div class="payment-and-shipping">
+      <div>
+        <h2>Payment</h2>
+        <p>PayPal</p>
+      </div>
+      <div>
+        <h2>Shipping</h2>
+        <p>Premium shipping</p>
+      </div>
+    </div>
   </section>
-  <section class="payment-section">
-    <h2>Payment</h2>
-    <p>Your payment info</p>
-  </section>
-  <div class="order">
+  <div class="order-items">
     {#each $cart as item}
-      <OrderItem {item} bind:price={productPrice} />
+      <OrderItem {item} bind:price={productPrice} type="checkout" />
     {/each}
   </div>
   {#if $cart.length === 0}
@@ -30,7 +44,6 @@
     </div>
   {:else}
     <div class="order-total">
-      <hr />
       <h3 class="total-sum">Total</h3>
       <p class="total-sum">€{totalPrice}</p>
     </div>
@@ -41,40 +54,54 @@
 </div>
 
 <style>
-  .checkout-page {
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    gap: 2rem;
+  .user-submitted-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    margin-block: 1rem;
+    background-color: var(--clr-white);
     color: var(--clr-black);
-    padding: 2rem;
+  }
+  .payment-and-shipping {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    background-color: var(--clr-white);
   }
 
   .wrapper {
+    margin: 0 auto;
     max-width: 600px;
   }
 
   .order-total {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    padding: 1rem;
+    margin-block: 1rem;
   }
 
   .total-sum {
     font-weight: 700;
-    margin-block-end: 1rem;
-  }
-
-  .order-total div {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 1rem;
-    margin-inline: 2rem;
-    margin-top: 1rem;
   }
 
   .checkout-button {
     display: flex;
+    justify-content: center;
     text-transform: uppercase;
+    font-size: 1.2rem;
     font-weight: 600;
     width: 100%;
     padding: 1rem;
