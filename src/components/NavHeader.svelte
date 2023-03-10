@@ -49,7 +49,7 @@
   <div>
     <ul>
       <li>
-        <input type="search" name="search" id="" class:searchIsHidden />
+        <!-- <input type="search" name="search" id="" class:searchIsHidden /> -->
         <button
           class="icon-button"
           on:click={() => (searchIsHidden = !searchIsHidden)}

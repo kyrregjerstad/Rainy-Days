@@ -26,7 +26,7 @@
     z-index: 100;
     transition: transform 0.3s ease-in-out;
     padding: 5rem 1rem;
-    font-size: 2rem;
+    font-size: 1.2rem;
 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
