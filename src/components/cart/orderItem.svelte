@@ -93,11 +93,13 @@
   }
 
   .order-item-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
   }
 
   .order-item-image img {
-    height: 100%;
     object-fit: cover;
   }
 
