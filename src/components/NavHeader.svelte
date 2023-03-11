@@ -5,6 +5,7 @@
   import HoverCart from "./cart/HoverCart.svelte";
   import { userFavorites } from "@stores/user-favorites";
   import NavigationSidebar from "./NavigationSidebar.svelte";
+  import ShoppingBagIcon from "@components/navbar/ShoppingBagIcon.svelte";
 
   let cartIsHidden = true;
 
@@ -67,9 +68,7 @@
         >
       </li>
       <li>
-        <a href="/cart"
-          ><span class="material-symbols-outlined"> shopping_bag </span></a
-        >
+        <a href="/cart"><ShoppingBagIcon /></a>
       </li>
     </ul>
   </div>
