@@ -26,6 +26,7 @@
 
   let selectedSize;
   let selectedColor;
+  let buttonText = "Add to bag";
 
   function cartHandler(product, selectedSize, selectedColor) {
     if (selectedSize && selectedColor) {
@@ -41,8 +42,6 @@
       { id: productId, quantity: 1, size: selectedSize, color: selectedColor },
     ];
   }
-
-  $: console.log({ slug: $page.params.productName });
 </script>
 
 <div class="page-wrapper">
@@ -66,8 +65,8 @@
         <button
           class="add-to-cart"
           on:click={() => cartHandler(product, selectedSize, selectedColor)}
-          >Add to bag</button
-        >
+          >{buttonText}
+        </button>
         <AddToFavorites tooltip={false} fontSize={"3.5rem"} />
       </div>
       <p>

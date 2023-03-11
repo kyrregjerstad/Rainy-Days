@@ -53,7 +53,7 @@
             on:click={() => removeFromShoppingBag(id)}
             ><span class="material-symbols-outlined"> delete </span></button
           >
-          <div>|</div>
+          <div class="pipe-separator">|</div>
           <AddToFavorites />
         </div>
       {/if}
@@ -122,6 +122,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+  }
+
+  .pipe-separator {
+    color: lightgray;
+    pointer-events: none;
+    user-select: none;
   }
 
   .buttons {
