@@ -11,10 +11,34 @@
 
   let sortedInventory = inventory;
 
-  $: $filterOptions, console.log($filterOptions);
-
   $: $filterOptions,
     (sortedInventory = sortInventory(inventory, $filterOptions));
+
+  // function handleRemoveFilter(event) {
+  //   const filterValue = event.detail.filterName;
+  //   Object.keys($filterOptions).forEach((key) => {
+  //     if ($filterOptions[key].includes(filterValue)) {
+  //       $filterOptions[key] = $filterOptions[key].filter(
+  //         (item) => item !== filterValue
+  //       );
+  //     } else if ($filterOptions[key] === filterValue) {
+  //       $filterOptions[key] = "";
+  //     }
+  //   });
+  // }
+
+  function handleRemoveFilter(event) {
+    const filterValue = event.detail.filterName;
+    Object.keys($filterOptions).forEach((key) => {
+      if ($filterOptions[key].includes(filterValue)) {
+        $filterOptions[key] = $filterOptions[key].filter(
+          (item) => item !== filterValue
+        );
+      } else if ($filterOptions[key] === filterValue) {
+        $filterOptions[key] = "";
+      }
+    });
+  }
 </script>
 
 <HeroImage
@@ -25,6 +49,24 @@
 
 <div class="page">
   <FilterAndSortButton />
+  <div class="user-filters">
+    {#each Object.values($filterOptions) as filter}
+      {#if filter && filter.length == 1}
+        <ActiveFilterLabel
+          filterName={filter}
+          on:removeFilter={handleRemoveFilter}
+        />
+      {/if}
+      {#if filter && filter.length > 1}
+        {#each filter as subFilter}
+          <ActiveFilterLabel
+            filterName={subFilter}
+            on:removeFilter={handleRemoveFilter}
+          />
+        {/each}
+      {/if}
+    {/each}
+  </div>
   <div class="products-grid">
     {#each sortedInventory as product}
       {#if product.gender === "Men" || product.gender === "Unisex"}
@@ -39,6 +81,11 @@
 </div>
 
 <style>
+  .user-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
   .page {
     margin-top: 5rem;
     margin-inline: 1rem;

@@ -5,25 +5,19 @@
 
   $: sidebarHidden = $state.filtersSidebarHidden;
 
-  let selectedFilter = {
-    sortBy: null,
+  let resetFilter = {
+    sortBy: [],
     selectedSeasons: [],
     selectedColors: [],
     selectedSizes: [],
   };
 
   function resetFilters() {
-    selectedFilter.sortBy = null;
-    selectedFilter.selectedColors = [];
-    selectedFilter.selectedSeasons = [];
-    selectedFilter.selectedSizes = [];
-
-    $filterOptions = selectedFilter;
+    $filterOptions = resetFilter;
   }
 
   function saveFilters() {
     $state.filtersSidebarHidden = true;
-    $filterOptions = selectedFilter;
   }
 </script>
 
@@ -43,7 +37,7 @@
         name="sort-by"
         id="price-ascending"
         value="lowToHigh"
-        bind:group={selectedFilter.sortBy}
+        bind:group={$filterOptions.sortBy}
       />
     </div>
     <div>
@@ -53,7 +47,7 @@
         name="sort-by"
         id="price-descending"
         value="highToLow"
-        bind:group={selectedFilter.sortBy}
+        bind:group={$filterOptions.sortBy}
       />
     </div>
   </section>
@@ -66,7 +60,7 @@
         name="seasons"
         id="winter"
         value="winter"
-        bind:group={selectedFilter.selectedSeasons}
+        bind:group={$filterOptions.selectedSeasons}
       />
     </div>
     <div>
@@ -76,7 +70,7 @@
         name="seasons"
         id="spring"
         value="spring"
-        bind:group={selectedFilter.selectedSeasons}
+        bind:group={$filterOptions.selectedSeasons}
       />
     </div>
     <div>
@@ -86,7 +80,7 @@
         name="seasons"
         id="summer"
         value="summer"
-        bind:group={selectedFilter.selectedSeasons}
+        bind:group={$filterOptions.selectedSeasons}
       />
     </div>
     <div>
@@ -96,7 +90,7 @@
         name="seasons"
         id="autumn"
         value="autumn"
-        bind:group={selectedFilter.selectedSeasons}
+        bind:group={$filterOptions.selectedSeasons}
       />
     </div>
   </section>
@@ -109,7 +103,7 @@
         name="colour"
         id="red"
         value="red"
-        bind:group={selectedFilter.selectedColors}
+        bind:group={$filterOptions.selectedColors}
       />
     </div>
     <div>
@@ -119,7 +113,7 @@
         name="colour"
         id="blue"
         value="blue"
-        bind:group={selectedFilter.selectedColors}
+        bind:group={$filterOptions.selectedColors}
       />
     </div>
     <div>
@@ -129,7 +123,7 @@
         name="colour"
         id="green"
         value="green"
-        bind:group={selectedFilter.selectedColors}
+        bind:group={$filterOptions.selectedColors}
       />
     </div>
     <div>
@@ -139,7 +133,7 @@
         name="colour"
         id="yellow"
         value="yellow"
-        bind:group={selectedFilter.selectedColors}
+        bind:group={$filterOptions.selectedColors}
       />
     </div>
     <div>
@@ -149,7 +143,7 @@
         name="colour"
         id="orange"
         value="orange"
-        bind:group={selectedFilter.selectedColors}
+        bind:group={$filterOptions.selectedColors}
       />
     </div>
     <div>
@@ -159,7 +153,7 @@
         name="colour"
         id="purple"
         value="purple"
-        bind:group={selectedFilter.selectedColors}
+        bind:group={$filterOptions.selectedColors}
       />
     </div>
   </section>
@@ -174,7 +168,7 @@
           name="size"
           id="XS"
           value="XS"
-          bind:group={selectedFilter.selectedSizes}
+          bind:group={$filterOptions.selectedSizes}
         />
         <label for="S">S</label>
         <input
@@ -182,7 +176,7 @@
           name="size"
           id="S"
           value="S"
-          bind:group={selectedFilter.selectedSizes}
+          bind:group={$filterOptions.selectedSizes}
         />
         <label for="M">M</label>
         <input
@@ -190,7 +184,7 @@
           name="size"
           id="M"
           value="M"
-          bind:group={selectedFilter.selectedSizes}
+          bind:group={$filterOptions.selectedSizes}
         />
         <label for="L">L</label>
         <input
@@ -198,7 +192,7 @@
           name="size"
           id="L"
           value="L"
-          bind:group={selectedFilter.selectedSizes}
+          bind:group={$filterOptions.selectedSizes}
         />
         <label for="XL">S</label>
         <input
@@ -206,7 +200,7 @@
           name="size"
           id="XL"
           value="XL"
-          bind:group={selectedFilter.selectedSizes}
+          bind:group={$filterOptions.selectedSizes}
         />
         <label for="XXL">XXL</label>
         <input
@@ -214,7 +208,7 @@
           name="size"
           id="XXL"
           value="XXL"
-          bind:group={selectedFilter.selectedSizes}
+          bind:group={$filterOptions.selectedSizes}
         />
       </div>
     </div>

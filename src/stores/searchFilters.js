@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 
 export const filterOptions = writable({
-  sortBy: null,
+  sortBy: [],
   selectedSeasons: [],
   selectedColors: [],
   selectedSizes: [],

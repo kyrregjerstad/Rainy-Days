@@ -59,10 +59,10 @@ export function sortInventory(inventory, filterOptions) {
   if (selectedSizes.length) {
     inventory = sortBySize(inventory, selectedSizes);
   }
-  if (sortBy === "lowToHigh") {
+  if (sortBy.includes("lowToHigh")) {
     inventory = sortByPriceAscending(inventory);
   }
-  if (sortBy === "highToLow") {
+  if (sortBy.includes("highToLow")) {
     inventory = sortByPriceDescending(inventory);
   }
   return inventory;

@@ -1,11 +1,18 @@
 <script>
+  import { createEventDispatcher } from "svelte";
   import "@fontsource/material-icons-outlined";
+
+  const dispatch = createEventDispatcher();
+
+  function handleClick() {
+    dispatch("removeFilter", { filterName });
+  }
 
   export let filterName;
 </script>
 
 <div>
-  <button>
+  <button on:click={handleClick}>
     <span class="material-symbols-outlined"> label </span>
     X {filterName}</button
   >
