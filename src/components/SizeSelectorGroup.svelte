@@ -23,5 +23,6 @@
   .sizes {
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
   }
 </style>

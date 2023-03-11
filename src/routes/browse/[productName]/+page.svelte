@@ -140,6 +140,7 @@
 
   .add-to-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     justify-content: space-between;
     align-items: center;
