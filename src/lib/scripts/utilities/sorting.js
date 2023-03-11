@@ -1,4 +1,12 @@
 // @ts-nocheck
+function sortByGender(inventory, gender) {
+  return inventory.filter(
+    (product) =>
+      product.gender.toLowerCase() === gender.toLowerCase() ||
+      product.gender === "Unisex"
+  );
+}
+
 function sortByPriceAscending(inventory) {
   return inventory.sort((a, b) => a.price - b.price);
 }
@@ -46,9 +54,11 @@ function sortByColor(inventory, colors = []) {
   );
 }
 
-export function sortInventory(inventory, filterOptions) {
+export function sortInventory(inventory, filterOptions, gender = "Unisex") {
   const { selectedSeasons, selectedColors, selectedSizes, sortBy } =
     filterOptions;
+
+  inventory = sortByGender(inventory, gender);
 
   if (selectedSeasons.length) {
     inventory = sortBySeason(inventory, selectedSeasons);

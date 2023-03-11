@@ -6,39 +6,13 @@
   import { sortInventory } from "@utils/sorting";
   import FilterAndSortButton from "@components/browse/FilterAndSortButton.svelte";
   import { filterOptions } from "@stores/searchFilters";
-  import HeroImage from "../../../components/HeroImage.svelte";
-  import ActiveFilterLabel from "../../../components/browse/ActiveFilterLabel.svelte";
+  import HeroImage from "@components/HeroImage.svelte";
+  import FilterLabels from "@components/filters and sort/FilterLabels.svelte";
 
   let sortedInventory = inventory;
 
   $: $filterOptions,
-    (sortedInventory = sortInventory(inventory, $filterOptions));
-
-  // function handleRemoveFilter(event) {
-  //   const filterValue = event.detail.filterName;
-  //   Object.keys($filterOptions).forEach((key) => {
-  //     if ($filterOptions[key].includes(filterValue)) {
-  //       $filterOptions[key] = $filterOptions[key].filter(
-  //         (item) => item !== filterValue
-  //       );
-  //     } else if ($filterOptions[key] === filterValue) {
-  //       $filterOptions[key] = "";
-  //     }
-  //   });
-  // }
-
-  function handleRemoveFilter(event) {
-    const filterValue = event.detail.filterName;
-    Object.keys($filterOptions).forEach((key) => {
-      if ($filterOptions[key].includes(filterValue)) {
-        $filterOptions[key] = $filterOptions[key].filter(
-          (item) => item !== filterValue
-        );
-      } else if ($filterOptions[key] === filterValue) {
-        $filterOptions[key] = "";
-      }
-    });
-  }
+    (sortedInventory = sortInventory(inventory, $filterOptions, "Men"));
 </script>
 
 <HeroImage
@@ -49,23 +23,17 @@
 
 <div class="page">
   <FilterAndSortButton />
+  <div>
+    {#if sortedInventory.length === 0}
+      No items found
+    {:else if sortedInventory.length === 1}
+      1 item
+    {:else}
+      {sortedInventory.length} items
+    {/if}
+  </div>
   <div class="user-filters">
-    {#each Object.values($filterOptions) as filter}
-      {#if filter && filter.length == 1}
-        <ActiveFilterLabel
-          filterName={filter}
-          on:removeFilter={handleRemoveFilter}
-        />
-      {/if}
-      {#if filter && filter.length > 1}
-        {#each filter as subFilter}
-          <ActiveFilterLabel
-            filterName={subFilter}
-            on:removeFilter={handleRemoveFilter}
-          />
-        {/each}
-      {/if}
-    {/each}
+    <FilterLabels />
   </div>
   <div class="products-grid">
     {#each sortedInventory as product}

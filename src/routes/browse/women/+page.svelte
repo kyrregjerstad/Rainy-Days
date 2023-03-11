@@ -7,10 +7,11 @@
   import FilterAndSortButton from "@components/browse/FilterAndSortButton.svelte";
   import { filterOptions } from "@stores/searchFilters";
   import HeroImage from "../../../components/HeroImage.svelte";
+  import FilterLabels from "@components/filters and sort/FilterLabels.svelte";
 
   let sortedInventory = inventory;
 
-  $: $filterOptions, sortInventory(inventory, $filterOptions);
+  $: $filterOptions, sortInventory(inventory, $filterOptions, "women");
 </script>
 
 <HeroImage
@@ -22,6 +23,18 @@
 
 <div class="page">
   <FilterAndSortButton />
+  <div>
+    {#if sortedInventory.length === 0}
+      No items found
+    {:else if sortedInventory.length === 1}
+      1 item
+    {:else}
+      {sortedInventory.length} items
+    {/if}
+  </div>
+  <div class="user-filters">
+    <FilterLabels />
+  </div>
   <div class="products-grid">
     {#each sortedInventory as product}
       {#if product.gender === "Women" || product.gender === "Unisex"}

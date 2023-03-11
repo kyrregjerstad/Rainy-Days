@@ -14,7 +14,10 @@
 <div>
   <button on:click={handleClick}>
     <span class="material-symbols-outlined"> label </span>
-    X {filterName}</button
+    <span class="material-symbols-outlined remove-filter__label">
+      label_off
+    </span>
+    {filterName}</button
   >
 </div>
 
@@ -24,6 +27,23 @@
     justify-content: center;
     align-items: center;
 
+    padding: 0.5rem;
+  }
+
+  .remove-filter__label {
+    display: none;
+  }
+
+  button span {
+    font-size: 1.2rem;
     padding: 0.2rem;
+  }
+
+  button:hover span:first-child {
+    display: none;
+  }
+
+  button:hover .remove-filter__label {
+    display: inline-block;
   }
 </style>
