@@ -1,8 +1,6 @@
 <script>
   import { inventory } from "../stores/inventory";
   import Product from "./browse/Product.svelte";
-
-  export let productId;
 </script>
 
 <section class="featured-products">

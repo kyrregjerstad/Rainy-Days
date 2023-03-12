@@ -8,8 +8,6 @@
   export let hasParallax = true;
   export let height;
 
-  console.log(height);
-
   switch (height) {
     case "small":
       height = "20vw";
