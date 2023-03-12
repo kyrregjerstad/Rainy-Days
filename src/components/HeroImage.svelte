@@ -79,7 +79,7 @@
     max-height: 75dvh;
   }
   .CTA-button {
-    font-size: clamp(1rem, 3vw, 5rem);
+    font-size: clamp(1rem, 2vw, 4rem);
     background-color: var(--clr-primary-dark);
     padding: 1rem;
     text-transform: uppercase;

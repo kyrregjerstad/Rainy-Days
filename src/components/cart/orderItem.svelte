@@ -67,7 +67,7 @@
       {#if type === "checkout"}
         <p>{quantity}</p>
       {/if}
-      <p>€{inventoryProduct.price * quantityString}</p>
+      <p>€{(inventoryProduct.price * quantityString).toFixed(2)}</p>
     </div>
   </div>
 </div>

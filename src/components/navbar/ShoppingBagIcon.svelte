@@ -42,10 +42,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -1rem;
-    right: -1rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    font-size: 0.75rem;
+    top: -0.6rem;
+    right: -0.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
     text-align: center;
     background-color: var(--clr-primary-light);
     opacity: 0.8;
