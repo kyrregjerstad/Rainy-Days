@@ -33,6 +33,10 @@
       ...$cart,
       { id: productId, quantity: 1, size: selectedSize, color: selectedColor },
     ];
+    buttonText = "Added!";
+    setTimeout(() => {
+      buttonText = "Add to bag";
+    }, 2000);
   }
 </script>
 
