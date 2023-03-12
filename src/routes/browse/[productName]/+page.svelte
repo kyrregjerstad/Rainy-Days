@@ -1,7 +1,4 @@
 <script>
-  import { page } from "$app/stores";
-
-  import { inventory } from "@stores/inventory";
   import { cart } from "@stores/shopping-cart";
   import AddToFavorites from "../../../components/browse/AddToFavorites.svelte";
   import SimilarItems from "../../../components/browse/SimilarItems.svelte";
@@ -13,17 +10,12 @@
 
   /** @type {import('./$types').LayoutData} */
   export let data;
-
-  let productName = data.pathname.split("/")[2];
-
-  productName = productName.replace(/%20/g, " ");
-
-  let product = inventory.find(
-    (item) => item.name.toLowerCase() === productName.toLowerCase()
-  );
+  let { product } = data;
+  $: product = data.product;
+  $: availableColors = product.availableColors;
+  $: availableSizes = product.availableSizes;
 
   let { availableColors, availableSizes } = product;
-
   let selectedSize;
   let selectedColor;
   let buttonText = "Add to bag";

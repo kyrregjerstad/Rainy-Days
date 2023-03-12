@@ -1,6 +1,7 @@
 <script>
   export let color;
   export let selectedColor;
+  export let isChecked = false;
 </script>
 
 <div>
