@@ -11,7 +11,8 @@
 
   let sortedInventory = inventory;
 
-  $: $filterOptions, sortInventory(inventory, $filterOptions, "women");
+  $: $filterOptions,
+    (sortedInventory = sortInventory(inventory, $filterOptions, "women"));
 </script>
 
 <HeroImage
