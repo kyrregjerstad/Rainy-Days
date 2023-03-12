@@ -8,6 +8,18 @@ import { writable } from "svelte/store";
 */
 
 export const cart = writable([
-  { id: "KWP1VF-zPtOO", quantity: 1, color: "red", size: "small" },
-  { id: "7sY-NQbaGGKp", quantity: 2, color: "blue", size: "large" },
+  {
+    id: "KWP1VF-zPtOO",
+    quantity: 1,
+    color: "red",
+    size: "small",
+    cartId: "1a",
+  },
+  {
+    id: "7sY-NQbaGGKp",
+    quantity: 2,
+    color: "blue",
+    size: "large",
+    cartId: "2a",
+  },
 ]);

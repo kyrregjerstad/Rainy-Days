@@ -30,7 +30,7 @@
         - {totalQuantity} items
       {/if}
     </h2>
-    {#each $cart as item (item.id)}
+    {#each $cart as item (item)}
       <OrderItem {item} bind:price={productPrice} />
     {/each}
   </section>

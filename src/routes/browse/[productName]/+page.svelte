@@ -7,6 +7,7 @@
   import CustomSelect from "../../../components/CustomSelect.svelte";
   import FeaturedCollections from "../../../components/FeaturedCollections.svelte";
   import SizeSelectorGroup from "../../../components/SizeSelectorGroup.svelte";
+  import { nanoid } from "nanoid";
 
   /** @type {import('./$types').LayoutData} */
   export let data;
@@ -29,10 +30,38 @@
   }
 
   function addToCart(productId, selectedSize, selectedColor) {
-    $cart = [
-      ...$cart,
-      { id: productId, quantity: 1, size: selectedSize, color: selectedColor },
-    ];
+    const existingItemIndex = $cart.findIndex(
+      (item) =>
+        item.id === productId &&
+        item.size === selectedSize &&
+        item.color === selectedColor
+    );
+    if (existingItemIndex > -1) {
+      // If the item already exists in the cart, update its quantity
+      $cart = $cart.map((item, index) => {
+        if (index === existingItemIndex) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        } else {
+          return item;
+        }
+      });
+    } else {
+      // If the item doesn't exist in the cart, add it with a quantity of 1
+      $cart = [
+        ...$cart,
+        {
+          id: productId,
+          quantity: 1,
+          size: selectedSize,
+          color: selectedColor,
+          cartId: nanoid(8),
+        },
+      ];
+    }
+    console.log($cart);
     buttonText = "Added!";
     setTimeout(() => {
       buttonText = "Add to bag";

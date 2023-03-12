@@ -8,15 +8,15 @@
   export let item;
   export let type = "cart";
 
-  let { id, quantity, size, color } = item;
+  let { id, quantity, size, color, cartId } = item;
 
   let quantityString = quantity.toString();
 
   let inventoryProduct = inventory.find((item) => item.id === id);
 
-  function removeFromShoppingBag(id) {
+  function removeFromShoppingBag(cartId) {
     cart.update((cart) => {
-      return cart.filter((item) => item.id !== id);
+      return cart.filter((item) => item.cartId !== cartId);
     });
   }
 
@@ -50,7 +50,7 @@
         <div class="buttons">
           <button
             class="remove-from-cart-button"
-            on:click={() => removeFromShoppingBag(id)}
+            on:click={() => removeFromShoppingBag(cartId)}
             ><span class="material-symbols-outlined"> delete </span></button
           >
           <div class="pipe-separator">|</div>
