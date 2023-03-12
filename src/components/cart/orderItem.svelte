@@ -1,35 +1,22 @@
 <script>
   import { inventory } from "../../stores/inventory";
   import AddToFavorites from "../browse/AddToFavorites.svelte";
-  import { cart } from "../../stores/shopping-cart";
+  import {
+    cart,
+    removeFromShoppingBag,
+    updateQuantity,
+  } from "../../stores/shopping-cart";
   import { blur, fly } from "svelte/transition";
   import { cubicOut, sineInOut } from "svelte/easing";
 
   export let item;
   export let type = "cart";
 
-  let { id, quantity, size, color, cartId } = item;
+  let { id, quantity, size, color, cartItemId } = item;
 
   let quantityString = quantity.toString();
 
   let inventoryProduct = inventory.find((item) => item.id === id);
-
-  function removeFromShoppingBag(cartId) {
-    cart.update((cart) => {
-      return cart.filter((item) => item.cartId !== cartId);
-    });
-  }
-
-  function updateQuantity() {
-    cart.update((cart) => {
-      return cart.map((item) => {
-        if (item.id === id) {
-          return { ...item, quantity: parseInt(quantityString) };
-        }
-        return item;
-      });
-    });
-  }
 
   export const price = inventoryProduct.price;
 </script>
@@ -50,7 +37,7 @@
         <div class="buttons">
           <button
             class="remove-from-cart-button"
-            on:click={() => removeFromShoppingBag(cartId)}
+            on:click={() => removeFromShoppingBag(cartItemId)}
             ><span class="material-symbols-outlined"> delete </span></button
           >
           <div class="pipe-separator">|</div>
@@ -64,7 +51,7 @@
           name="quantity"
           id=""
           bind:value={quantityString}
-          on:change={() => updateQuantity()}
+          on:change={() => updateQuantity(cartItemId, quantityString)}
         >
           <option value="1">1</option>
           <option value="2">2</option>
