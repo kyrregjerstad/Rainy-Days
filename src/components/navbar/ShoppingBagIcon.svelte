@@ -4,6 +4,14 @@
   let totalQuantity = 0;
   let animate = false;
 
+  let hidden = true;
+
+  $: if (totalQuantity > 0) {
+    hidden = false;
+  } else {
+    hidden = true;
+  }
+
   $: totalQuantity = $cart.reduce((acc, item) => {
     return acc + parseInt(item.quantity, 10);
   }, 0);
@@ -18,7 +26,9 @@
 </script>
 
 <div class="shopping-bag-container">
-  <div class="shopping-bag-amount" class:animate>{totalQuantity}</div>
+  <div class="shopping-bag-amount" class:animate class:hidden>
+    {totalQuantity}
+  </div>
   <span class="material-symbols-outlined"> shopping_bag </span>
 </div>
 
@@ -48,5 +58,9 @@
   }
   span {
     font-size: 1.2rem;
+  }
+
+  .hidden {
+    display: none;
   }
 </style>
