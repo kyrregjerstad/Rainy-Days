@@ -2,7 +2,7 @@
   let src = "/assets/images/hero/hero-27.webp";
   let scrollY;
 
-  let speed = 0.2;
+  let speed = 0.1;
   let offsetHeight;
 
   let parallaxElement;
@@ -20,7 +20,7 @@
       class="image-container"
       {src}
       alt=""
-      style:transform="translate3d(0, {scrollY * speed - 580}px, 0)"
+      style:transform="translate3d(0, {scrollY * speed - 200}px, 0)"
     />
   </div>
 </section>

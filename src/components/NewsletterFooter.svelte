@@ -26,7 +26,6 @@
     padding-block: 5rem;
     background-color: var(--clr-light-grey);
     color: var(--clr-black);
-    margin-top: 2rem;
   }
 
   form {

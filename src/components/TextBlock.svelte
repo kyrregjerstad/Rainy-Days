@@ -29,12 +29,13 @@
 <style>
   .text-block {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 4rem auto;
     padding: 1rem 1rem;
   }
 
   .text-block h2 {
-    font-size: 2rem;
+    position: relative;
+    font-size: 3rem;
     margin-bottom: 1rem;
   }
 

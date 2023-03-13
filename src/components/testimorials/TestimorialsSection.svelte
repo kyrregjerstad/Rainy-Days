@@ -46,7 +46,7 @@
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    margin: 1rem 0;
+    margin-top: 2rem;
   }
 
   .background-image {

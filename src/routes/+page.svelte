@@ -16,7 +16,6 @@
 <FeaturedText />
 <FullWidthImageSection />
 <TextBlock />
-
 <TestimorialsSection />
 
 <style>
