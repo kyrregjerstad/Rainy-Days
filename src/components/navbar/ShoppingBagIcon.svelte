@@ -49,6 +49,7 @@
     height: 1.2rem;
     text-align: center;
     background-color: var(--clr-primary-light);
+    color: var(--clr-white);
     opacity: 0.8;
     border-radius: 100%;
     transition: all 0.2s ease-in-out;
