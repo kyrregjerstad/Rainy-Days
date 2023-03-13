@@ -22,6 +22,7 @@
   --clr-light-grey: #d7dad7;
 
   --clr-button-icon: var(--clr-primary-dark);
+  --clr-progress-bar: #c2efb3;
 
   --clr-button-favorite-active: var(--clr-primary-dark);
   --clr-button-favorite-inactive: var(--clr-primary-semi-trans);
