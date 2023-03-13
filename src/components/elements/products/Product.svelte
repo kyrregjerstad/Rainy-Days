@@ -1,7 +1,7 @@
 <script>
   import { cart } from "@stores/shopping-cart";
-  import AddToCart from "../../buttons/AddToCart.svelte";
-  import AddToFavorites from "../../buttons/AddToFavorites.svelte";
+  import AddToCart from "../../elements/buttons/AddToCart.svelte";
+  import AddToFavorites from "../../elements/buttons/AddToFavorites.svelte";
   export let productId = 123;
   export let productName = "Product Name";
   export let productDescription = "Product Description";

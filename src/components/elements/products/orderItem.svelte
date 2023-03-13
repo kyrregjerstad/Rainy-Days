@@ -1,11 +1,11 @@
 <script>
-  import { inventory } from "../../stores/inventory";
+  import { inventory } from "../../../stores/inventory";
   import AddToFavorites from "../buttons/AddToFavorites.svelte";
   import {
     cart,
     removeFromShoppingBag,
     updateQuantity,
-  } from "../../stores/shopping-cart";
+  } from "../../../stores/shopping-cart";
   import { blur, fly } from "svelte/transition";
   import { cubicOut, sineInOut } from "svelte/easing";
 

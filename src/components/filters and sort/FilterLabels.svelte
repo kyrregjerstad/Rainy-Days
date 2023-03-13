@@ -1,5 +1,5 @@
 <script>
-  import ActiveFilterLabel from "@components/buttons/ActiveFilterLabel.svelte";
+  import ActiveFilterLabel from "@components/elements/buttons/ActiveFilterLabel.svelte";
   import { filterOptions } from "@stores/searchFilters";
 
   function handleRemoveFilter(event) {
