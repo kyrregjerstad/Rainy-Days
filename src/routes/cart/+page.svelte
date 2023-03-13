@@ -31,6 +31,7 @@
       {/if}
     </h2>
     {#each $cart as item (item.cartItemId)}
+      <hr class="order-item-divider" />
       <OrderItem {item} bind:price={productPrice} />
     {/each}
   </section>
@@ -76,6 +77,14 @@
     padding: 1rem;
 
     background-color: var(--clr-white);
+  }
+
+  .order-items hr:nth-of-type(1) {
+    display: none;
+  }
+
+  .order-items hr {
+    margin-block: 0;
   }
 
   .summary {
