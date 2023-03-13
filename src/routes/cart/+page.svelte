@@ -1,6 +1,5 @@
 <script>
   import OrderItem from "@components/elements/products/orderItem.svelte";
-  import FeaturedCollections from "@components/layout/FeaturedCollections.svelte";
   import { cart } from "../../stores/shopping-cart";
 
   let totalPrice = 0;

@@ -4,7 +4,6 @@
   import Product from "@components/elements/products/Product.svelte";
   import { inventory } from "@stores/inventory";
   import { sortInventory } from "@utils/sorting";
-  import FilterAndSortButton from "@components/elements/buttons/FilterAndSortButton.svelte";
   import { filterOptions } from "@stores/searchFilters";
   import HeroImage from "@components/layout/images/HeroImage.svelte";
 

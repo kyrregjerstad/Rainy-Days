@@ -6,14 +6,8 @@
     duration: 1000,
     easing: cubicOut,
   });
+
   export let data;
-
-  console.log(data);
-
-  let address;
-  let payment;
-  let confirm;
-  let confirmed;
 
   $: data, setProgressBar(data.pathname, value);
 

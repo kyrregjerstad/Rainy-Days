@@ -1,6 +1,4 @@
 <script>
-  let hasContent = false;
-
   function handleInput(event) {
     if (event.target.value !== "") {
       event.target.parentNode.classList.add("has-content");
