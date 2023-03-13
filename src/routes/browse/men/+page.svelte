@@ -1,12 +1,12 @@
 <script lang="js">
   // @ts-nocheck
 
-  import Product from "@components/browse/Product.svelte";
+  import Product from "@components/layout/product/Product.svelte";
   import { inventory } from "@stores/inventory";
   import { sortInventory } from "@utils/sorting";
-  import FilterAndSortButton from "@components/browse/FilterAndSortButton.svelte";
+  import FilterAndSortButton from "@components/buttons/FilterAndSortButton.svelte";
   import { filterOptions } from "@stores/searchFilters";
-  import HeroImage from "@components/HeroImage.svelte";
+  import HeroImage from "@components/layout/HeroImage.svelte";
   import FilterLabels from "@components/filters and sort/FilterLabels.svelte";
 
   let sortedInventory = inventory;

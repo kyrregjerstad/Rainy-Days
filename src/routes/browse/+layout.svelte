@@ -1,5 +1,5 @@
 <script>
-  import FiltersSidebar from "@components/browse/FiltersSidebar.svelte";
+  import FiltersSidebar from "@components/layout/FiltersSidebar.svelte";
 </script>
 
 <FiltersSidebar />

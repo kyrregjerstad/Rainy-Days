@@ -1,12 +1,12 @@
 <script>
   import { addToCart } from "@stores/shopping-cart";
-  import AddToFavorites from "../../../components/browse/AddToFavorites.svelte";
-  import SimilarItems from "../../../components/browse/SimilarItems.svelte";
-  import ColorSelector from "../../../components/ColorSelectorButtons.svelte";
-  import ColorSelectorGroup from "../../../components/ColorSelectorGroup.svelte";
-  import CustomSelect from "../../../components/CustomSelect.svelte";
-  import FeaturedCollections from "../../../components/FeaturedCollections.svelte";
-  import SizeSelectorGroup from "../../../components/SizeSelectorGroup.svelte";
+  import AddToFavorites from "@components/buttons/AddToFavorites.svelte";
+  import SimilarItems from "@components/layout/product/SimilarItems.svelte";
+  import ColorSelector from "@components/buttons/ColorSelectorButtons.svelte";
+  import ColorSelectorGroup from "@components/selectors/ColorSelectorGroup.svelte";
+  import CustomSelect from "@components/selectors/CustomSelect.svelte";
+  import FeaturedCollections from "@components/layout/FeaturedCollections.svelte";
+  import SizeSelectorGroup from "@components/selectors/SizeSelectorGroup.svelte";
 
   /** @type {import('./$types').LayoutData} */
   export let data;

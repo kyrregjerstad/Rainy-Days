@@ -1,6 +1,6 @@
 <script>
-  import { inventory } from "../stores/inventory";
-  import Product from "./browse/Product.svelte";
+  import { inventory } from "../../../stores/inventory";
+  import Product from "./Product.svelte";
 </script>
 
 <section class="featured-products">

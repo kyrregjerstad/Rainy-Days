@@ -1,5 +1,5 @@
 <script>
-  import PaymentForm from "@components/forms/PaymentForm.svelte";
+  import PaymentForm from "@components/layout/forms/PaymentForm.svelte";
 </script>
 
 <section class="checkout-page">

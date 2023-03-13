@@ -1,6 +1,6 @@
 <script>
   import { userFavorites } from "@stores/user-favorites";
-  import Product from "../../components/browse/Product.svelte";
+  import Product from "@components/layout/product/Product.svelte";
   import { inventory } from "@stores/inventory";
 </script>
 

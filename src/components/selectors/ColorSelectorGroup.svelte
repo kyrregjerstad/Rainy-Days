@@ -1,5 +1,5 @@
 <script>
-  import ColorSelectorButtons from "./ColorSelectorButtons.svelte";
+  import ColorSelectorButtons from "../buttons/ColorSelectorButtons.svelte";
 
   export let availableColors = [];
 

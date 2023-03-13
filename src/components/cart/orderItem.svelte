@@ -1,6 +1,6 @@
 <script>
   import { inventory } from "../../stores/inventory";
-  import AddToFavorites from "../browse/AddToFavorites.svelte";
+  import AddToFavorites from "../buttons/AddToFavorites.svelte";
   import {
     cart,
     removeFromShoppingBag,

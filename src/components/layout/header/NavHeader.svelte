@@ -2,10 +2,10 @@
   import { page } from "$app/stores";
 
   import "@fontsource/material-icons-outlined";
-  import HoverCart from "./cart/HoverCart.svelte";
+  import HoverCart from "../../cart/HoverCart.svelte";
   import { userFavorites } from "@stores/user-favorites";
-  import NavigationSidebar from "./NavigationSidebar.svelte";
-  import ShoppingBagIcon from "@components/navbar/ShoppingBagIcon.svelte";
+  import NavigationSidebar from "../NavigationSidebar.svelte";
+  import ShoppingBagIcon from "@components/layout/header/ShoppingBagIcon.svelte";
 
   let cartIsHidden = true;
 

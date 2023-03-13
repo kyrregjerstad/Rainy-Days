@@ -1,5 +1,5 @@
 <script>
-  import CustomerTestimorial from "@components/testimorials/CustomerTestimorial.svelte";
+  import CustomerTestimorial from "@components/layout/testimorials/CustomerTestimorial.svelte";
 </script>
 
 <section>

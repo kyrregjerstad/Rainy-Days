@@ -1,5 +1,5 @@
 <script>
-  import AddressForm from "../../../components/forms/AddressForm.svelte";
+  import AddressForm from "@components/layout/forms/AddressForm.svelte";
 </script>
 
 <section class="checkout-page">

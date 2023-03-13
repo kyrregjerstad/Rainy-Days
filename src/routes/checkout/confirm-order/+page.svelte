@@ -1,6 +1,6 @@
 <script>
   import { cart } from "../../../stores/shopping-cart";
-  import OrderItem from "../../../components/cart/orderItem.svelte";
+  import OrderItem from "@components/cart/orderItem.svelte";
 
   let totalPrice = 0;
   let productPrice;

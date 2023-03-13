@@ -3,9 +3,9 @@
   import { onMount } from "svelte";
 
   import "../lib/styles/global.css";
-  import NavHeader from "../components/NavHeader.svelte";
-  import Footer from "../components/Footer.svelte";
-  import NewsletterFooter from "@components/NewsletterFooter.svelte";
+  import NavHeader from "@components/layout/header/NavHeader.svelte";
+  import Footer from "@components/layout/footer/Footer.svelte";
+  import NewsletterFooter from "@components/layout/footer/NewsletterFooter.svelte";
 
   onMount(() => {
     const lenis = new Lenis({

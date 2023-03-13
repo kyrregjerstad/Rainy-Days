@@ -1,5 +1,5 @@
 <script>
-  import SizeSelectButton from "./SizeSelectButton.svelte";
+  import SizeSelectButton from "../buttons/SizeSelectButton.svelte";
 
   export let availableSizes;
 
