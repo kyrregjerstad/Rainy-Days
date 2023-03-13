@@ -1,4 +1,5 @@
 <script>
+  import NewsletterFooter from "@components/NewsletterFooter.svelte";
   import FeaturedCollections from "../components/FeaturedCollections.svelte";
   import FeaturedProducts from "../components/FeaturedProducts.svelte";
   import FeaturedText from "../components/FeaturedText.svelte";

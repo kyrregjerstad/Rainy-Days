@@ -10,7 +10,6 @@
     background-color: var(--clr-white);
     color: var(--clr-black);
     padding: 1rem;
-    margin-top: 2rem;
   }
   footer ul {
     display: flex;

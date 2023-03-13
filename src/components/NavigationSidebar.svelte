@@ -5,7 +5,7 @@
 <div class="navigation-sidebar" class:navSidebarIsHidden>
   <ul>
     <li><a href="/browse/men">men</a></li>
-    <li><a href="browse/women">women</a></li>
+    <li><a href="/browse/women">women</a></li>
     <li><a href="/browse/collections">collections</a></li>
     <hr />
     <li><a href="#">search</a></li>

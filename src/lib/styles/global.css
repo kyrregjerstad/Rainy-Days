@@ -16,6 +16,11 @@
   --clr-primary-semi-trans: #6e86874e;
   --clr-primary-semi-trans-light: #97b5b61c;
 
+  --clr-blue: #064789;
+  --clr-rose: #f9e0d9;
+
+  --clr-light-grey: #d7dad7;
+
   --clr-button-icon: var(--clr-primary-dark);
 
   --clr-button-favorite-active: var(--clr-primary-dark);
