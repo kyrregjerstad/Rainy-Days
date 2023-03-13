@@ -1,5 +1,7 @@
 <script>
   import NewsletterFooter from "@components/NewsletterFooter.svelte";
+  import CustomerTestimorial from "@components/testimorials/CustomerTestimorial.svelte";
+  import TestimorialsSection from "@components/testimorials/TestimorialsSection.svelte";
   import FeaturedCollections from "../components/FeaturedCollections.svelte";
   import FeaturedProducts from "../components/FeaturedProducts.svelte";
   import FeaturedText from "../components/FeaturedText.svelte";
@@ -14,6 +16,8 @@
 <FeaturedText />
 <FullWidthImageSection />
 <TextBlock />
+
+<TestimorialsSection />
 
 <style>
 </style>

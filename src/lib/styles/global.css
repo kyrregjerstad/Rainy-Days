@@ -27,6 +27,8 @@
   --clr-button-favorite-active: var(--clr-primary-dark);
   --clr-button-favorite-inactive: var(--clr-primary-semi-trans);
 
+  --user-testimorial-border: var(--clr-light-grey);
+
   --clr-white: #fff;
   --clr-medium-white: #ebeff1;
   --clr-black: #000;
