@@ -3,7 +3,9 @@
   export let searchIsHidden = true;
 </script>
 
-<button class="icon-button" on:click={() => (searchIsHidden = !searchIsHidden)}
+<button
+  class="icon-button"
+  on:click|stopPropagation={() => (searchIsHidden = !searchIsHidden)}
   ><span class="material-symbols-outlined"> search </span></button
 >
 

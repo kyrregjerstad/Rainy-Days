@@ -8,6 +8,7 @@
   name="search"
   class:searchIsHidden
   bind:value={searchValue}
+  on:click|stopPropagation
 />
 
 <style>

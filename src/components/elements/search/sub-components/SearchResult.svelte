@@ -46,6 +46,12 @@
     color: var(--clr-white);
   }
 
+  @media (max-width: 700px) {
+    button {
+      display: none;
+    }
+  }
+
   .search-result-item:hover button {
     opacity: 1;
   }

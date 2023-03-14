@@ -15,6 +15,7 @@
 
   let fontSize = 1.2;
   let marginInline = 0;
+  let innerWidth;
 
   function animateFavorites() {
     fontSize = 1.5;
@@ -33,8 +34,10 @@
 
 <NavigationSidebar bind:navSidebarIsHidden />
 
+<svelte:window bind:innerWidth />
+
 <nav>
-  {#if searchIsHidden}
+  {#if searchIsHidden && innerWidth > 650}
     <button
       class="hamburger-menu icon-button"
       on:click={() => (navSidebarIsHidden = !navSidebarIsHidden)}
@@ -43,7 +46,7 @@
     </button>
   {/if}
   <ul>
-    {#if searchIsHidden}
+    {#if searchIsHidden && innerWidth > 650}
       <li><a href="/" id="home">Rainy Days</a></li>
     {/if}
     <li class="navigation-subpages"><a href="/browse/men">men</a></li>

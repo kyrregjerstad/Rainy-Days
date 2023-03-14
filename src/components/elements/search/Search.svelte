@@ -42,6 +42,8 @@
   }
 </script>
 
+<svelte:window on:click={() => (searchIsHidden = true)} />
+
 <div class="search-container" style="border: {border}; ">
   <SearchInput bind:searchIsHidden bind:searchValue={$searchStore.search} />
   {#if $searchStore.search.length > 0}
