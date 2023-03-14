@@ -5,7 +5,7 @@ const config = {
   kit: {
     alias: {
       "@components": "./src/components",
-      "@stores": "./src/stores",
+      "@stores": "./src/lib/stores",
       "@utils": "./src/lib/scripts/utilities",
     },
 

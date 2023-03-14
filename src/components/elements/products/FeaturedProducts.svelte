@@ -1,5 +1,5 @@
 <script>
-  import { inventory } from "../../../stores/inventory";
+  import { inventory } from "@stores/inventory";
   import Product from "./Product.svelte";
 </script>
 

@@ -1,4 +1,4 @@
-import { inventory } from "@stores/inventory";
+import { inventory } from "$lib/stores/inventory";
 
 /** @type {import('./$types').LayoutLoad} */
 export const load = async ({ url: { pathname } }) => {
