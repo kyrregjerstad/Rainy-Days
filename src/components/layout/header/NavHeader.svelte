@@ -6,6 +6,7 @@
   import { userFavorites } from "@stores/user-favorites";
   import NavigationSidebar from "../NavigationSidebar.svelte";
   import ShoppingBagIcon from "@components/layout/header/ShoppingBagIcon.svelte";
+  import Search from "@components/elements/search/Search.svelte";
 
   let cartIsHidden = true;
 
@@ -33,14 +34,18 @@
 <NavigationSidebar bind:navSidebarIsHidden />
 
 <nav>
-  <button
-    class="hamburger-menu icon-button"
-    on:click={() => (navSidebarIsHidden = !navSidebarIsHidden)}
-  >
-    <span class="material-symbols-outlined "> menu </span>
-  </button>
+  {#if searchIsHidden}
+    <button
+      class="hamburger-menu icon-button"
+      on:click={() => (navSidebarIsHidden = !navSidebarIsHidden)}
+    >
+      <span class="material-symbols-outlined "> menu </span>
+    </button>
+  {/if}
   <ul>
-    <li><a href="/" id="home">Rainy Days</a></li>
+    {#if searchIsHidden}
+      <li><a href="/" id="home">Rainy Days</a></li>
+    {/if}
     <li class="navigation-subpages"><a href="/browse/men">men</a></li>
     <li class="navigation-subpages"><a href="/browse/women">women</a></li>
     <li class="navigation-subpages">
@@ -50,12 +55,7 @@
   <div>
     <ul>
       <li>
-        <!-- <input type="search" name="search" id="" class:searchIsHidden /> -->
-        <button
-          class="icon-button"
-          on:click={() => (searchIsHidden = !searchIsHidden)}
-          ><span class="material-symbols-outlined"> search </span></button
-        >
+        <Search bind:searchIsHidden />
       </li>
       <li>
         <a href="/favourites"
