@@ -57,4 +57,11 @@
     font-size: 0.8rem;
     transform: translateY(-1.2rem);
   }
+
+  @media (max-width: 400px) {
+    .transform-label {
+      font-size: 0.9rem;
+      transform: translateY(0.8rem);
+    }
+  }
 </style>

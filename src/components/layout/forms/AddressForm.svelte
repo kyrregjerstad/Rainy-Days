@@ -85,4 +85,14 @@
     background-color: var(--clr-primary-semi-trans);
     outline: none;
   }
+
+  @media (max-width: 600px) {
+    .address-street-number {
+      grid-template-columns: 1fr;
+    }
+
+    .address-tripe-row {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
