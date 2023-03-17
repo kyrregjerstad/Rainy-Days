@@ -1,27 +1,11 @@
 <script>
-  import { cart } from "@stores/shopping-cart";
-  import AddToCart from "../../elements/buttons/AddToCart.svelte";
   import AddToFavorites from "../../elements/buttons/AddToFavorites.svelte";
+
   export let productId = 123;
   export let productName = "Product Name";
   export let productDescription = "Product Description";
   export let productPrice = "€420";
-  export let productImage = "/assets/images/jacket1.png";
-
   export let isFeatured = false;
-
-  function addToCart() {
-    if ($cart.find((item) => item.id === productId)) {
-      $cart = $cart.map((item) => {
-        if (item.id === productId) {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-        return item;
-      });
-    } else {
-      $cart = [...$cart, { id: productId, quantity: 1 }];
-    }
-  }
 </script>
 
 <div class="product-container">

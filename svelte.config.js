@@ -7,6 +7,7 @@ const config = {
       "@components": "./src/components",
       "@stores": "./src/lib/stores",
       "@utils": "./src/lib/scripts/utilities",
+      "@scripts": "./src/lib/scripts",
     },
 
     // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.

@@ -28,7 +28,6 @@
 
   $: $userFavorites, animateFavorites();
   $: $page, (navSidebarIsHidden = true);
-  $: console.log(innerWidth);
 </script>
 
 <!-- <HoverCart bind:cartIsHidden /> -->

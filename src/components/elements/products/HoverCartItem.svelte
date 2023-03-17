@@ -9,8 +9,6 @@
 
   productName = inventory.find((item) => item.id === productId).name;
   productPrice = inventory.find((item) => item.id === productId).price;
-
-  $: console.log(productName);
 </script>
 
 <div class="cart-item">

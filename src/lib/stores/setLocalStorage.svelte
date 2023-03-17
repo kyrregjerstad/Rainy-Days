@@ -4,6 +4,4 @@
   function saveToLocalStorage(item) {
     localStorage.setItem("userFavorites", JSON.stringify(item));
   }
-
-  $: $userFavorites, console.log("ding");
 </script>

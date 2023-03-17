@@ -57,17 +57,18 @@
         <AddToFavorites tooltip={false} fontSize={"3.5rem"} />
       </div>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-        doloremque soluta esse numquam error neque est nesciunt ipsam fugiat
-        labore earum quidem laborum consequuntur quod, ipsum culpa nostrum
-        distinctio dignissimos dicta asperiores accusamus quos tenetur? Iste
-        eius accusamus, dignissimos ut adipisci molestiae, accusantium libero
-        error at consequatur enim! Eos praesentium ab illum placeat deserunt
-        adipisci qui alias quidem rerum molestiae quae nemo sint necessitatibus
-        laudantium est error deleniti doloremque atque, repellat soluta. Beatae
-        inventore enim similique quidem veniam? Sed repudiandae repellendus
-        natus, molestiae animi quam consectetur distinctio esse rerum incidunt
-        labore minus? Odit veniam ipsa sed? Dolorum, dignissimos facere. Dolor!
+        <!-- /* spell-checker: disable */-->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero doloremque
+        soluta esse numquam error neque est nesciunt ipsam fugiat labore earum quidem
+        laborum consequuntur quod, ipsum culpa nostrum distinctio dignissimos dicta
+        asperiores accusamus quos tenetur? Iste eius accusamus, dignissimos ut adipisci
+        molestiae, accusantium libero error at consequatur enim! Eos praesentium
+        ab illum placeat deserunt adipisci qui alias quidem rerum molestiae quae
+        nemo sint necessitatibus laudantium est error deleniti doloremque atque,
+        repellat soluta. Beatae inventore enim similique quidem veniam? Sed repudiandae
+        repellendus natus, molestiae animi quam consectetur distinctio esse rerum
+        incidunt labore minus? Odit veniam ipsa sed? Dolorum, dignissimos facere.
+        Dolor!
       </p>
     </section>
   </div>
