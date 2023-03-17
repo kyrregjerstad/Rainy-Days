@@ -28,6 +28,7 @@
 
   $: $userFavorites, animateFavorites();
   $: $page, (navSidebarIsHidden = true);
+  $: console.log(innerWidth);
 </script>
 
 <!-- <HoverCart bind:cartIsHidden /> -->
@@ -46,7 +47,9 @@
     </button>
   {/if}
   <ul>
-    {#if searchIsHidden && innerWidth < 650}
+    {#if !searchIsHidden && innerWidth < 750}
+      <li />
+    {:else}
       <li><a href="/" id="home">Rainy Days</a></li>
     {/if}
     <li class="navigation-subpages"><a href="/browse/men">men</a></li>
@@ -89,6 +92,7 @@
     background-color: var(--clr-white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: var(--clr-black);
+    height: 75px;
   }
 
   span {

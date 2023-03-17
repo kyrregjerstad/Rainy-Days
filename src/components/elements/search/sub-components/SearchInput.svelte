@@ -1,6 +1,7 @@
 <script>
   export let searchIsHidden = true;
   export let searchValue = "";
+  export let searchInput;
 </script>
 
 <input
@@ -9,6 +10,8 @@
   class:searchIsHidden
   bind:value={searchValue}
   on:click|stopPropagation
+  autofocus
+  bind:this={searchInput}
 />
 
 <style>
@@ -21,7 +24,7 @@
     padding-left: 1rem;
     width: 100%;
     border: none;
-    width: 250px;
+    width: clamp(210px, 35vw, 350px);
   }
 
   input:focus {

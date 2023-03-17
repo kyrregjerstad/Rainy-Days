@@ -21,6 +21,9 @@
   });
 
   export let searchIsHidden = true;
+
+  export let searchInput;
+
   let searchValue = "";
 
   let border = "none";
@@ -45,11 +48,15 @@
 <svelte:window on:click={() => (searchIsHidden = true)} />
 
 <div class="search-container" style="border: {border}; ">
-  <SearchInput bind:searchIsHidden bind:searchValue={$searchStore.search} />
+  <SearchInput
+    bind:searchIsHidden
+    bind:searchValue={$searchStore.search}
+    bind:searchInput
+  />
   {#if $searchStore.search.length > 0}
     <SearchResultsDropdown bind:searchResults={$searchStore.filtered} />
   {/if}
-  <SearchButton bind:searchIsHidden />
+  <SearchButton bind:searchIsHidden bind:searchInput />
 </div>
 
 <style>
