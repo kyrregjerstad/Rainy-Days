@@ -37,7 +37,7 @@
 <svelte:window bind:innerWidth />
 
 <nav>
-  {#if searchIsHidden && innerWidth > 650}
+  {#if searchIsHidden && innerWidth < 650}
     <button
       class="hamburger-menu icon-button"
       on:click={() => (navSidebarIsHidden = !navSidebarIsHidden)}
@@ -46,7 +46,7 @@
     </button>
   {/if}
   <ul>
-    {#if searchIsHidden && innerWidth > 650}
+    {#if searchIsHidden && innerWidth < 650}
       <li><a href="/" id="home">Rainy Days</a></li>
     {/if}
     <li class="navigation-subpages"><a href="/browse/men">men</a></li>
