@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import { writable, get } from "svelte/store";
 
-export const cart = writable([
+/*  SAMPLE CART
   {
     id: "KWP1VF-zPtOO",
     quantity: 1,
@@ -16,7 +16,9 @@ export const cart = writable([
     size: "large",
     cartItemId: "2a",
   },
-]);
+*/
+
+export const cart = writable([]);
 
 export function removeFromShoppingBag(cartItemId) {
   cart.update((cart) => cart.filter((item) => item.cartItemId !== cartItemId));
