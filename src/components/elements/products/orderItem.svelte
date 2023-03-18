@@ -1,24 +1,18 @@
 <script>
   import { inventory } from "@stores/inventory";
+  import { removeFromShoppingBag, updateQuantity } from "@stores/shopping-cart";
+  import { fly } from "svelte/transition";
+  import { sineInOut } from "svelte/easing";
   import AddToFavorites from "../buttons/AddToFavorites.svelte";
-  import {
-    cart,
-    removeFromShoppingBag,
-    updateQuantity,
-  } from "@stores/shopping-cart";
-  import { blur, fly } from "svelte/transition";
-  import { cubicOut, sineInOut } from "svelte/easing";
 
   export let item;
   export let type = "cart";
+  export const price = inventoryProduct.price;
 
-  let { id, quantity, size, color, cartItemId } = item;
+  const { id, quantity, size, color, cartItemId } = item;
 
   let quantityString = quantity.toString();
-
-  let inventoryProduct = inventory.find((item) => item.id === id);
-
-  export const price = inventoryProduct.price;
+  const inventoryProduct = inventory.find((item) => item.id === id);
 </script>
 
 <div
@@ -26,7 +20,10 @@
   out:fly|local={{ x: -700, duration: 650, easing: sineInOut }}
 >
   <div class="order-item-image">
-    <img src="/assets/images/products/{id}.webp" alt="Jacket 1" />
+    <img
+      src="/assets/images/products/{id}.webp"
+      alt="{inventoryProduct.name} Rain Jacket from Rainy Days"
+    />
   </div>
   <div class="order-item-info">
     <div class="size-color">
@@ -49,7 +46,6 @@
       {#if type === "cart"}
         <select
           name="quantity"
-          id=""
           bind:value={quantityString}
           on:change={() => updateQuantity(cartItemId, quantityString)}
         >
