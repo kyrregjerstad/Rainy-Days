@@ -63,7 +63,9 @@
 >
   <div class="text" style:transform={textTransform}>
     <h1>{title}</h1>
-    <h2>{subtitle}</h2>
+    {#if subtitle}
+      <h2>{subtitle}</h2>
+    {/if}
     {#if hasCTA}
       <a class="CTA-button" href="/browse/collections">Browse Collections</a>
     {/if}

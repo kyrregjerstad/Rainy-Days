@@ -117,21 +117,12 @@
     cursor: pointer;
   }
 
-  input {
-    padding: 0.2rem;
-    margin-right: 1rem;
-  }
-
   .hamburger-menu {
     display: flex;
   }
 
   .hamburger-menu span {
     font-size: 2.5rem;
-  }
-
-  .searchIsHidden {
-    display: none;
   }
 
   #home {

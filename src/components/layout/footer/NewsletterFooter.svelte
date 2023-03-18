@@ -8,10 +8,10 @@
       <h3>Sign up for our weekly newsletter</h3>
     </label>
     <input
-      for="newsletter"
       type="email"
       name="newsletter"
       placeholder="your@email.com"
+      id="newsletter"
       required
     />
     <button class="general-button" type="submit" value="">{buttonText}</button>

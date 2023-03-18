@@ -4,9 +4,12 @@
   export let searchInput;
 </script>
 
+<!-- svelte-ignore a11y-autofocus -->
+<label for="search" class="visually-hidden">search</label>
 <input
   type="search"
   name="search"
+  id="search"
   class:searchIsHidden
   bind:value={searchValue}
   on:click|stopPropagation
