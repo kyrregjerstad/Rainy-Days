@@ -41,6 +41,10 @@ html {
   color: var(--clr-white);
 }
 
+textarea {
+  font-family: "Montserrat", sans-serif;
+}
+
 img {
   max-width: 100%;
 }
