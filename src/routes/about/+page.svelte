@@ -45,8 +45,8 @@
   }
   .text {
     max-width: 70ch;
-    padding-block: 5rem;
     line-height: 1.5rem;
+    /* margin-block-start: 5rem; */
   }
 
   h1 {
@@ -55,10 +55,14 @@
   }
 
   h2 {
-    margin-block: 1rem;
+    margin-block-end: 3rem;
   }
 
   p {
     margin-block-end: 1rem;
+  }
+
+  section {
+    margin-block: 3rem;
   }
 </style>
