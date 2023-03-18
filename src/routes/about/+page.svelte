@@ -31,11 +31,10 @@
       the great outdoors, no matter what the weather is like.
     </p>
   </div>
-
-  <div class="images">
-    <img src="/assets/images/hero/hero-29.webp" alt="" />
-  </div>
 </section>
+<div class="images">
+  <img src="/assets/images/hero/hero-29.webp" alt="" />
+</div>
 
 <style>
   .about-page {
@@ -46,6 +45,8 @@
   }
   .text {
     max-width: 70ch;
+    padding-block: 5rem;
+    line-height: 1.5rem;
   }
 
   h1 {
