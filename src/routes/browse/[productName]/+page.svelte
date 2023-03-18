@@ -54,7 +54,11 @@
           on:click={() => cartHandler(product, selectedSize, selectedColor)}
           >{buttonText}
         </button>
-        <AddToFavorites tooltip={false} fontSize={"3.5rem"} />
+        <AddToFavorites
+          tooltip={false}
+          fontSize={"3.5rem"}
+          productId={product.id}
+        />
       </div>
       <p>
         <!-- /* spell-checker: disable */-->

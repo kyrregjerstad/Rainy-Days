@@ -3,7 +3,7 @@
   import { userFavorites } from "@stores/user-favorites";
 
   export let isFavorite = false;
-  export let productId = 123;
+  export let productId;
   export let tooltip = true;
   export let fontSize = "1.5rem";
 
@@ -35,6 +35,8 @@
   }
 
   checkIfFavorite();
+
+  $: console.log($userFavorites);
 </script>
 
 <div>

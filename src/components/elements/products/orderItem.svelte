@@ -41,7 +41,7 @@
             ><span class="material-symbols-outlined"> delete </span></button
           >
           <div class="pipe-separator">|</div>
-          <AddToFavorites />
+          <AddToFavorites productId={id} />
         </div>
       {/if}
     </div>

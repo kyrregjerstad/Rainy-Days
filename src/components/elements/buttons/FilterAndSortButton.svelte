@@ -21,6 +21,8 @@
     font-weight: 300;
     font-size: 1rem;
     color: white;
+    padding: 1rem;
+    border: solid white 2px;
   }
 
   span {
