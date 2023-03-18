@@ -5,6 +5,7 @@
   import ColorSelectorGroup from "@components/elements/selectors/ColorSelectorGroup.svelte";
   import FeaturedCollections from "@components/layout/FeaturedCollections.svelte";
   import SizeSelectorGroup from "@components/elements/selectors/SizeSelectorGroup.svelte";
+  import FullScreenImageModal from "@components/layout/images/FullScreenImageModal.svelte";
 
   /** @type {import('./$types').LayoutData} */
   export let data;
@@ -17,6 +18,8 @@
   let selectedSize;
   let selectedColor;
   let buttonText = "Add to bag";
+
+  let modalIsOpen = false;
 
   function cartHandler(product, selectedSize, selectedColor) {
     if (selectedSize && selectedColor) {
@@ -31,13 +34,19 @@
   }
 </script>
 
+<FullScreenImageModal
+  src={`/assets/images/products/${product.id}.webp`}
+  bind:modalIsOpen
+/>
 <div class="page-wrapper">
   <div class="product-page">
     <div class="image-wrapper">
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
       <img
         class="product-image"
         src="/assets/images/products/{product.id}.webp"
         alt={product.name}
+        on:click={() => (modalIsOpen = true)}
       />
     </div>
     <section class="product-text">
@@ -114,6 +123,7 @@
   .product-image {
     position: sticky;
     top: 5rem;
+    cursor: zoom-in;
   }
 
   .product-text {
