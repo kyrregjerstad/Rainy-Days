@@ -7,12 +7,12 @@
 
   export let item;
   export let type = "cart";
-  export const price = inventoryProduct.price;
 
   const { id, quantity, size, color, cartItemId } = item;
 
   let quantityString = quantity.toString();
   const inventoryProduct = inventory.find((item) => item.id === id);
+  export const price = inventoryProduct.price;
 </script>
 
 <div
@@ -20,10 +20,12 @@
   out:fly|local={{ x: -700, duration: 650, easing: sineInOut }}
 >
   <div class="order-item-image">
-    <img
-      src="/assets/images/products/{id}.webp"
-      alt="{inventoryProduct.name} Rain Jacket from Rainy Days"
-    />
+    <a href="/browse/{inventoryProduct.name}">
+      <img
+        src="/assets/images/products/{id}.webp"
+        alt="{inventoryProduct.name} Rain Jacket from Rainy Days"
+      />
+    </a>
   </div>
   <div class="order-item-info">
     <div class="size-color">
