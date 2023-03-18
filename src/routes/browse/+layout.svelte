@@ -12,7 +12,7 @@
   :global(.products-grid) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 2rem 1rem;
     margin-bottom: 5rem;
   }
 

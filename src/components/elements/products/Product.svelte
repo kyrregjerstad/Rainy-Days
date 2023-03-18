@@ -18,25 +18,37 @@
     <div class="featured-title">{productName}</div>
   {/if}
 
-  <div class="product-image">
-    <a href="/browse/{productName}">
+  <a href="/browse/{productName}">
+    <div class="product-image">
       <img
         src="/assets/images/products/{productId}.webp"
         alt="{productName} - {productDescription}"
       />
-    </a>
-  </div>
-  {#if !isFeatured}
-    <div class="product-info">
-      <h3>{productName}</h3>
-      <p>€ {productPrice}</p>
     </div>
-  {/if}
+    {#if !isFeatured}
+      <div class="product-info">
+        <h3>{productName}</h3>
+        <p>€ {productPrice}</p>
+      </div>
+    {/if}
+  </a>
 </div>
 
 <style>
   .product-container {
     position: relative;
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
   }
 
   .product-container img {
