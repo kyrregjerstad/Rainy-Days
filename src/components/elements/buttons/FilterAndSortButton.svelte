@@ -18,7 +18,7 @@
   }
   button {
     display: flex;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1rem;
     color: white;
     padding: 1rem;
