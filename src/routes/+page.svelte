@@ -1,5 +1,5 @@
 <script>
-  import TestimorialsSection from "@components/layout/testimorials/TestimorialsSection.svelte";
+  import TestimonialsSection from "@components/layout/testimonials/TestimonialsSection.svelte";
   import FeaturedCollections from "@components/layout/FeaturedCollections.svelte";
   import FeaturedProducts from "@components/elements/products/FeaturedProducts.svelte";
   import FeaturedText from "@components/layout/FeaturedText.svelte";
@@ -14,7 +14,7 @@
 <FeaturedText />
 <FullWidthImageSection />
 <TextBlock />
-<TestimorialsSection />
+<TestimonialsSection />
 
 <style>
 </style>

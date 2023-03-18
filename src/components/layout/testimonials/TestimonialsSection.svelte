@@ -1,5 +1,5 @@
 <script>
-  import CustomerTestimorial from "@components/layout/testimorials/CustomerTestimorial.svelte";
+  import CustomerTestimonial from "@components/layout/testimonials/CustomerTestimonial.svelte";
 </script>
 
 <section>
@@ -10,18 +10,18 @@
   />
   <h2>What our customers say</h2>
 
-  <div class="testimorial-section-grid">
-    <CustomerTestimorial
+  <div class="testimonial-section-grid">
+    <CustomerTestimonial
       name={"Sarah"}
       userName={"@sarahTheHiker"}
       text={"Found my perfect go-to rain jacket for outdoor adventures! These jackets from @RainyDays are super durable and keep me comfortable no matter the weather. #PushingTheComfortZone #Hiking #Exploring"}
     />
-    <CustomerTestimorial
+    <CustomerTestimonial
       name={"David"}
-      userName={"@skiiingDude"}
+      userName={"@skiingDude"}
       text={"Never worry about the weather again! @RainyDays's rain jackets are perfect for any outdoor activity. I can now ski with confidence knowing I'm protected. #PushingTheComfortZone #Skiing"}
     />
-    <CustomerTestimorial
+    <CustomerTestimonial
       name={"Monica"}
       userName={"@happyCamper"}
       text={"I'm in love with my new rain jacket from @RainyDays. The sleek design is perfect for any adventure, and it keeps me dry and comfortable! #PushingTheComfortZone #Explorer"}
@@ -31,7 +31,6 @@
 
 <style>
   section {
-    /* max-width: 1800px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +56,7 @@
     object-fit: cover;
     opacity: 0.5;
   }
-  .testimorial-section-grid {
+  .testimonial-section-grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
