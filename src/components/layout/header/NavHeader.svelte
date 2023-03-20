@@ -28,6 +28,7 @@
 
   $: $userFavorites, animateFavorites();
   $: $page, (navSidebarIsHidden = true);
+  $: currentPath = $page.route.id.split("/")[2];
 </script>
 
 <!-- <HoverCart bind:cartIsHidden /> -->
@@ -51,10 +52,19 @@
     {:else}
       <li><a href="/" id="home">Rainy Days</a></li>
     {/if}
-    <li class="navigation-subpages"><a href="/browse/men">men</a></li>
-    <li class="navigation-subpages"><a href="/browse/women">women</a></li>
     <li class="navigation-subpages">
-      <a href="/browse/collections">collections</a>
+      <a href="/browse/men" class:activePage={currentPath === "men"}>men</a>
+    </li>
+    <li class="navigation-subpages">
+      <a href="/browse/women" class:activePage={currentPath === "women"}
+        >women</a
+      >
+    </li>
+    <li class="navigation-subpages">
+      <a
+        href="/browse/collections"
+        class:activePage={currentPath === "collections"}>collections</a
+      >
     </li>
   </ul>
   <div>
@@ -133,6 +143,11 @@
 
   .navigation-subpages {
     display: none;
+  }
+
+  .activePage {
+    text-decoration: underline;
+    font-weight: 500;
   }
 
   @media (min-width: 600px) {
