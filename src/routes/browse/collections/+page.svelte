@@ -13,6 +13,10 @@
     (sortedInventory = sortInventory(inventory, $filterOptions));
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Collections</title>
+</svelte:head>
+
 <HeroImage title={"Peak Performance"} src="/assets/images/hero/hero-13.webp" />
 
 <div class="products-grid">

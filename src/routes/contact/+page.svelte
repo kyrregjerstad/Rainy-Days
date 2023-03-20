@@ -8,6 +8,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Contact</title>
+</svelte:head>
+
 <div class="wrapper">
   <section>
     <form action="">

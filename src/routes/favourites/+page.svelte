@@ -4,6 +4,10 @@
   import { inventory } from "@stores/inventory";
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Favourites</title>
+</svelte:head>
+
 <div class="user-favorites">
   {#each $userFavorites as favorite}
     {#each inventory as product}

@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Rainy Days | About</title>
+</svelte:head>
+
 <section class="about-page">
   <h1 class="about-page-header">Rainy Days</h1>
   <h2 class="about-page-slogan">Pushing the comfort zone</h2>

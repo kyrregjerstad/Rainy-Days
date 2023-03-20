@@ -34,6 +34,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Rainy Days | {product.name}</title>
+</svelte:head>
+
 <FullScreenImageModal
   src={`/assets/images/products/${product.id}.webp`}
   bind:modalIsOpen

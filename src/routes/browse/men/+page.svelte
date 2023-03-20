@@ -15,6 +15,10 @@
     (sortedInventory = sortInventory(inventory, $filterOptions, "Men"));
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Men</title>
+</svelte:head>
+
 <HeroImage
   title={"Prepare for Adventure"}
   src="/assets/images/hero/hero-29.webp"

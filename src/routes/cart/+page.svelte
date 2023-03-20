@@ -17,6 +17,10 @@
   }, 0);
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Cart</title>
+</svelte:head>
+
 <div class="shopping-bag">
   <section class="order-items">
     <h2>

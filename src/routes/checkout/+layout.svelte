@@ -27,6 +27,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Checkout</title>
+</svelte:head>
+
 <div class="progress-bar-wrapper">
   <progress id="checkout-progress" max="100" value={$value} />
 </div>

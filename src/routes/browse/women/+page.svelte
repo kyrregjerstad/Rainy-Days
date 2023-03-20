@@ -15,6 +15,10 @@
     (sortedInventory = sortInventory(inventory, $filterOptions, "women"));
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Women</title>
+</svelte:head>
+
 <HeroImage
   title={"Adventure Awaits"}
   subtitle={"Designed to keep you comfortable in all weather"}

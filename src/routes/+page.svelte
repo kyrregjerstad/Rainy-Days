@@ -8,6 +8,10 @@
   import TextBlock from "@components/layout/TextBlock.svelte";
 </script>
 
+<svelte:head>
+  <title>Rainy Days | Home</title>
+</svelte:head>
+
 <HeroImage title={"Adventure Awaits"} hasCTA />
 <FeaturedProducts />
 <FeaturedCollections />
