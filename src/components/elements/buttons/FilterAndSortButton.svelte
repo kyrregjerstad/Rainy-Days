@@ -14,7 +14,7 @@
 
 <style>
   div {
-    margin-block: 1rem;
+    margin-block: 2rem;
   }
   button {
     display: flex;

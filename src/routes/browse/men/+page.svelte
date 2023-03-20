@@ -54,8 +54,4 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-  .page {
-    margin-top: 5rem;
-    margin-inline: 1rem;
-  }
 </style>

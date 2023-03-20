@@ -16,6 +16,11 @@
     margin-bottom: 5rem;
   }
 
+  :global(.page) {
+    margin-top: 5rem;
+    margin-inline: 1rem;
+  }
+
   @media (min-width: 1200px) {
     :global(.products-grid) {
       grid-template-columns: repeat(4, 1fr);

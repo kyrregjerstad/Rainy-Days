@@ -35,8 +35,6 @@
   }
 
   checkIfFavorite();
-
-  $: console.log($userFavorites);
 </script>
 
 <div>

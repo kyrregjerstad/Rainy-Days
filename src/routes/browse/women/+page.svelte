@@ -50,8 +50,4 @@
 </div>
 
 <style>
-  .page {
-    margin-top: 5rem;
-    margin-inline: 1rem;
-  }
 </style>
