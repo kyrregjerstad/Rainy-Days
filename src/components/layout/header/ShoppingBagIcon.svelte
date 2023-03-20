@@ -59,7 +59,7 @@
     transform: scale3d(1.2, 1.2, 1.2);
   }
   span {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .hidden {

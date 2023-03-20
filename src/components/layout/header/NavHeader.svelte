@@ -13,15 +13,15 @@
   let searchIsHidden = true;
   let navSidebarIsHidden = true;
 
-  let fontSize = 1.2;
+  let fontSize = 1.4;
   let marginInline = 0;
   let innerWidth;
 
   function animateFavorites() {
-    fontSize = 1.5;
-    marginInline = -0.14;
+    fontSize = 1.6;
+    marginInline = -0.1;
     setTimeout(() => {
-      fontSize = 1.2;
+      fontSize = 1.4;
       marginInline = 0;
     }, 200);
   }
