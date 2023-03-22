@@ -14,6 +14,7 @@
 
 <div class="wrapper">
   <section>
+    <h1>Contact</h1>
     <form action="">
       <div class="row">
         <label for="name"
@@ -54,11 +55,20 @@
 </div>
 
 <style>
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
   section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--clr-white);
     color: var(--clr-black);
     padding: 1rem;
   }
+
   input,
   textarea {
     width: 100%;
@@ -68,6 +78,7 @@
   }
 
   form {
+    width: 100%;
     max-width: 800px;
   }
 
@@ -79,6 +90,7 @@
   }
 
   button {
+    font-size: 1.5rem;
     padding: 0.5rem 1rem;
     background-color: var(--clr-black);
     color: var(--clr-white);
