@@ -15,10 +15,11 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 3rem 1rem;
     margin: 5rem auto;
     max-width: 600px;
     background-color: var(--clr-white);
     color: var(--clr-black);
+    line-height: 1.5rem;
   }
 </style>

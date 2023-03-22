@@ -5,6 +5,14 @@
   let totalPrice = 0;
   let productPrice;
 
+  function getSessionStorage(key) {
+    return JSON.parse(sessionStorage.getItem(key));
+  }
+
+  const shippingAddress = getSessionStorage("shippingAddress");
+
+  console.log(shippingAddress);
+
   $: totalPrice = $cart.reduce((acc, item) => {
     return acc + parseInt(productPrice, 10) * parseInt(item.quantity, 10);
   }, 0);
@@ -14,13 +22,9 @@
   <section class="user-submitted-info">
     <div>
       <h2>Address</h2>
-      <p>Alice Kelly</p>
-      <p>23 Kirkgate</p>
-      <p>Thirsk</p>
-      <p>North Yorkshire</p>
-      <p>YO7 1PL</p>
-      <p>01845 524234</p>
-      <p>UK</p>
+      {#each Object.values(shippingAddress) as address}
+        <p>{address}</p>
+      {/each}
     </div>
     <div class="payment-and-shipping">
       <div>

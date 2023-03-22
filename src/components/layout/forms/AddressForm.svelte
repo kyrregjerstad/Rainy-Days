@@ -1,21 +1,21 @@
 <script>
   import FormInput from "./FormInput.svelte";
 
-  let hasContent = false;
-
-  function handleInput(event) {
-    if (event.target.value !== "") {
-      event.target.parentNode.classList.add("has-content");
-    } else {
-      event.target.parentNode.classList.remove("has-content");
-    }
+  function saveFormToSessionStorage(event) {
+    const formData = new FormData(event.target);
+    const shippingAddress = Object.fromEntries(formData);
+    sessionStorage.setItem("shippingAddress", JSON.stringify(shippingAddress));
   }
 </script>
 
 <div class="shipping-form">
   <h1>Shipping Address</h1>
   <div class="form-wrapper">
-    <form action="/checkout/payment" class="address-form">
+    <form
+      action="/checkout/payment"
+      class="address-form"
+      on:submit={saveFormToSessionStorage}
+    >
       <FormInput fieldName={"First Name"} required />
       <FormInput fieldName={"Last Name"} required />
 
@@ -23,7 +23,7 @@
         <FormInput fieldName={"Street"} required />
         <FormInput fieldName={"Number"} />
       </div>
-      <div class="address-tripe-row">
+      <div class="address-triple-row">
         <FormInput fieldName={"Place"} required />
         <FormInput fieldName={"Post Code"} required />
         <FormInput fieldName={"Country"} required />
@@ -66,7 +66,7 @@
     gap: var(--grid-gap);
   }
 
-  .address-tripe-row {
+  .address-triple-row {
     grid-column: 1 / span 2;
 
     display: grid;
@@ -91,7 +91,7 @@
       grid-template-columns: 1fr;
     }
 
-    .address-tripe-row {
+    .address-triple-row {
       grid-template-columns: 1fr;
     }
   }

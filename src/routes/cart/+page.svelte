@@ -53,9 +53,15 @@
       <p>€{totalPrice}</p>
     </div>
     <hr />
-    <a class="checkout-button general-button" href="/checkout/address">
-      Checkout
-    </a>
+    {#if totalQuantity === 0}
+      <a class="checkout-button general-button" href="/browse/collections">
+        Continue shopping
+      </a>
+    {:else}
+      <a class="checkout-button general-button" href="/checkout/address">
+        Checkout
+      </a>
+    {/if}
   </section>
 </div>
 

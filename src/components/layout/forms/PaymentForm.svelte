@@ -1,15 +1,5 @@
 <script>
   import FormInput from "./FormInput.svelte";
-
-  let hasContent = false;
-
-  function handleInput(event) {
-    if (event.target.value !== "") {
-      event.target.parentNode.classList.add("has-content");
-    } else {
-      event.target.parentNode.classList.remove("has-content");
-    }
-  }
 </script>
 
 <div class="form-wrapper">
