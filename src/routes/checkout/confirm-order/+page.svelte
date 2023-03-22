@@ -11,8 +11,6 @@
 
   const shippingAddress = getSessionStorage("shippingAddress");
 
-  console.log(shippingAddress);
-
   $: totalPrice = $cart.reduce((acc, item) => {
     return acc + parseInt(productPrice, 10) * parseInt(item.quantity, 10);
   }, 0);

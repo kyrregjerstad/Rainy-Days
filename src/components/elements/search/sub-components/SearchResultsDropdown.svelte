@@ -1,11 +1,33 @@
 <script>
   import SearchResult from "@components/elements/search/sub-components/SearchResult.svelte";
   import { keyEventSwitch } from "@scripts/handleSearchNavigation/handleSearchNavigation";
+  import Lenis from "@studio-freight/lenis";
+  import { onMount } from "svelte";
+
   export let searchResults = [];
 
   let selectedIndex = 0;
   let selectedItem;
   let href;
+
+  onMount(() => {
+    const lenis = new Lenis({
+      duration: 1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: "vertical",
+      gestureDirection: "vertical",
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  });
 
   function handleKeyDown(event) {
     [selectedIndex, selectedItem] = keyEventSwitch(
@@ -22,18 +44,21 @@
 
 {#if searchResults.length > 0}
   <div class="search-results-dropdown">
-    <ul>
-      {#each searchResults as product, index}
-        <li>
-          <SearchResult
-            {product}
-            {index}
-            {selectedIndex}
-            bind:externalHref={href}
-          />
-        </li>
-      {/each}
-    </ul>
+    <div class="results-container">
+      <ul>
+        {#each searchResults as product, index}
+          <li>
+            <SearchResult
+              {product}
+              {index}
+              {selectedIndex}
+              bind:externalHref={href}
+            />
+          </li>
+        {/each}
+      </ul>
+    </div>
+
     <div class="search-items-amount">
       {searchResults.length}
       {#if searchResults.length === 1}

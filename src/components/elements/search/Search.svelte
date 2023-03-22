@@ -47,7 +47,7 @@
 
 <svelte:window on:click={() => (searchIsHidden = true)} />
 
-<div class="search-container" style="border: {border}; ">
+<div class="search-container" style="border: {border}; " data-lenis-prevent>
   <SearchInput
     bind:searchIsHidden
     bind:searchValue={$searchStore.search}
