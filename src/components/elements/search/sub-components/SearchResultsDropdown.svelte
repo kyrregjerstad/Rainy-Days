@@ -1,15 +1,36 @@
 <script>
   import SearchResult from "@components/elements/search/sub-components/SearchResult.svelte";
-
+  import { keyEventSwitch } from "@scripts/handleSearchNavigation/handleSearchNavigation";
   export let searchResults = [];
+
+  let selectedIndex = 0;
+  let selectedItem;
+  let href;
+
+  function handleKeyDown(event) {
+    [selectedIndex, selectedItem] = keyEventSwitch(
+      event.key,
+      selectedIndex,
+      selectedItem,
+      searchResults,
+      href
+    );
+  }
 </script>
+
+<svelte:window on:keydown={handleKeyDown} />
 
 {#if searchResults.length > 0}
   <div class="search-results-dropdown">
     <ul>
-      {#each searchResults as product}
+      {#each searchResults as product, index}
         <li>
-          <SearchResult {product} />
+          <SearchResult
+            {product}
+            {index}
+            {selectedIndex}
+            bind:externalHref={href}
+          />
         </li>
       {/each}
     </ul>
@@ -44,7 +65,7 @@
     display: flex;
     flex-direction: column;
     list-style: none;
-    gap: 1.5rem;
+    gap: 0.5rem;
     padding: 1rem;
   }
 

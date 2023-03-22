@@ -2,9 +2,18 @@
   import AddToFavorites from "@components/elements/buttons/AddToFavorites.svelte";
 
   export let product;
+  export let index;
+  export let selectedIndex;
+  export let selectedItem;
+  let href = `/browse/${product.name}`;
+  export let externalHref;
+
+  $: if (selectedIndex === index) {
+    externalHref = `/browse/${product.name}`;
+  }
 </script>
 
-<a href="/browse/{product.name}">
+<a {href} class:selected={selectedIndex === index}>
   <div class="search-result-item">
     <img
       src="/assets/images/products/{product.id}.webp"
@@ -13,7 +22,7 @@
     <div class="product-text">
       <h4>{product.name}</h4>
       <p>€{product.price}</p>
-      <button>view</button>
+      <button tabindex="-1">view</button>
     </div>
   </div>
 </a>
@@ -24,7 +33,12 @@
     align-items: flex-start;
     gap: 1rem;
     width: 100%;
-    height: 80px;
+    height: 7rem;
+    padding: 1rem;
+  }
+
+  .search-result-item:hover {
+    background-color: var(--clr-light-grey);
   }
 
   .product-text {
@@ -54,5 +68,9 @@
 
   .search-result-item:hover button {
     opacity: 1;
+  }
+
+  .selected .search-result-item {
+    background-color: var(--clr-light-grey);
   }
 </style>
