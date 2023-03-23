@@ -58,7 +58,6 @@
         {/each}
       </ul>
     </div>
-
     <div class="search-items-amount">
       {searchResults.length}
       {#if searchResults.length === 1}
@@ -71,21 +70,6 @@
 {/if}
 
 <style>
-  .search-results-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: var(--clr-white);
-    z-index: 1;
-    max-height: 350px;
-    width: calc(100% + 2px);
-    transform: translateX(1px);
-    overflow: scroll;
-
-    border: 1px solid var(--clr-light-grey);
-    border-top: none;
-  }
-
   ul {
     display: flex;
     flex-direction: column;
@@ -94,13 +78,26 @@
     padding: 1rem;
   }
 
-  .wrapper {
-    position: relative;
+  .search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--clr-white);
+    z-index: 1;
+    height: 350px;
+    width: calc(100% + 2px);
+    transform: translateX(1px);
+
+    border: 1px solid var(--clr-light-grey);
+    border-top: none;
+  }
+
+  .results-container {
+    height: calc(100% - 3rem);
+    overflow: auto;
   }
 
   .search-items-amount {
-    position: sticky;
-    bottom: 0;
     background-color: var(--clr-white);
     display: flex;
     justify-content: center;

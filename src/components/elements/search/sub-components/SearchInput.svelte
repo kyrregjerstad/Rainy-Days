@@ -14,6 +14,7 @@
   bind:value={searchValue}
   on:click|stopPropagation
   autofocus
+  autocomplete="off"
   bind:this={searchInput}
 />
 

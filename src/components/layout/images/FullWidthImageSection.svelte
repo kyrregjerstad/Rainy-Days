@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   let src = "/assets/images/hero/hero-27.webp";
   let scrollY;
 
@@ -6,6 +7,12 @@
   let offsetHeight;
 
   let parallaxElement;
+
+  let offsetTop;
+
+  onMount(() => {
+    offsetTop = parallaxElement.getBoundingClientRect().top;
+  });
 </script>
 
 <svelte:window bind:scrollY />
