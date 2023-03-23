@@ -1,7 +1,7 @@
 <script>
   import SearchResult from "@components/elements/search/sub-components/SearchResult.svelte";
   import { keyEventSwitch } from "@scripts/handleSearchNavigation/handleSearchNavigation";
-  import Lenis from "@studio-freight/lenis";
+  import { lenisInit } from "@scripts/init/lenis-init";
   import { onMount } from "svelte";
 
   export let searchResults = [];
@@ -11,22 +11,7 @@
   let href;
 
   onMount(() => {
-    const lenis = new Lenis({
-      duration: 1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: "vertical",
-      gestureDirection: "vertical",
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    lenisInit();
   });
 
   function handleKeyDown(event) {

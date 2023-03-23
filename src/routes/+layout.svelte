@@ -1,29 +1,14 @@
 <script>
-  import Lenis from "@studio-freight/lenis";
   import { onMount } from "svelte";
-
+  import { lenisInit } from "@scripts/init/lenis-init";
   import "../lib/styles/global.css";
   import NavHeader from "@components/layout/header/NavHeader.svelte";
   import Footer from "@components/layout/footer/Footer.svelte";
   import NewsletterFooter from "@components/layout/footer/NewsletterFooter.svelte";
 
   onMount(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: "vertical",
-      gestureDirection: "vertical",
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: true,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    // sets up scroll smoothing
+    lenisInit();
   });
 </script>
 
