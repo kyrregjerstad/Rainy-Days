@@ -13,11 +13,9 @@
 </script>
 
 <NavHeader />
-
 <main>
   <slot />
 </main>
-
 <NewsletterFooter />
 <Footer />
 
