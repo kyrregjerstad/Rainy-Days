@@ -47,6 +47,7 @@
     justify-content: space-between;
     height: 100%;
   }
+
   img {
     max-width: 80px;
   }
@@ -63,6 +64,12 @@
   @media (max-width: 700px) {
     button {
       display: none;
+    }
+
+    .search-result-item {
+      gap: 0;
+      height: unset;
+      padding: 0;
     }
   }
 
