@@ -1,6 +1,6 @@
 <script>
   import { inventory } from "@stores/inventory";
-  export let productImage = "/assets/images/jacket1.png";
+  export let productImage = "/assets/images/products/product-16.webp";
   export let productName = "Product Name";
   export let productQuantity = 0;
   export let productPrice;

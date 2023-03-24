@@ -7,7 +7,7 @@
       </div>
       <img
         class="featured-product-img"
-        src="/assets/images/collections/collection-1.png"
+        src="/assets/images/collections/collection-1.webp"
         alt="Collection of bright colored hiking gear"
       />
     </div>
@@ -20,7 +20,7 @@
       </div>
       <img
         class="featured-product-img"
-        src="/assets/images/collections/collection-2.png"
+        src="/assets/images/collections/collection-2.webp"
         alt="Collection of hiking gear"
       />
     </div>
