@@ -3,6 +3,11 @@
   <title>Rainy Days - Pushing The Comfort Zone</title>
   <meta name="title" content="Rainy Days - Pushing The Comfort Zone" />
   <meta
+    property="image"
+    content="https://rainy-days.kyrre.dev/assets/images/meta/meta_social.jpg"
+  />
+
+  <meta
     name="description"
     content="Stay dry in style with Rainy Days' high-quality modern raincoats. Discover our modern, waterproof designs - perfect for urban adventures or weekend explorers. "
   />
@@ -12,10 +17,13 @@
   <meta property="og:url" content="https://rainy-days.kyrre.dev" />
   <meta property="og:title" content="Rainy Days - Pushing The Comfort Zone" />
   <meta
+    property="og:image"
+    content="https://rainy-days.kyrre.dev/assets/images/meta/meta_social.jpg"
+  />
+  <meta
     property="og:description"
     content="Stay dry in style with Rainy Days' high-quality modern raincoats. Discover our modern, waterproof designs - perfect for urban adventures or weekend explorers. "
   />
-  <meta property="og:image" content="/assets/meta/meta_social.jpg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -28,5 +36,8 @@
     property="twitter:description"
     content="Stay dry in style with Rainy Days' high-quality modern raincoats. Discover our modern, waterproof designs - perfect for urban adventures or weekend explorers. "
   />
-  <meta property="twitter:image" content="/assets/meta/meta_social.jpg" />
+  <meta
+    property="twitter:image"
+    content="https://rainy-days.kyrre.dev/assets/images/meta/meta_social.jpg"
+  />
 </svelte:head>
