@@ -46,21 +46,25 @@
     </div>
     <div class="quantity-price">
       {#if type === "cart"}
-        <select
-          name="quantity"
-          bind:value={quantityString}
-          on:change={() => updateQuantity(cartItemId, quantityString)}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
+        <label class="quantity-label" for="quantity">
+          Quantity:
+          <select
+            name="quantity"
+            id="quantity"
+            bind:value={quantityString}
+            on:change={() => updateQuantity(cartItemId, quantityString)}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </label>
       {/if}
       {#if type === "checkout"}
         <p>{quantity}</p>
@@ -93,6 +97,7 @@
     justify-content: space-between;
     flex: 2;
     padding: 2rem;
+    gap: 0.5rem;
   }
 
   .size-color {
@@ -100,6 +105,14 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+  }
+
+  .quantity-label {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .quantity-price {
