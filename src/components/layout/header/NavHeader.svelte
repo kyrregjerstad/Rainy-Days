@@ -97,7 +97,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
     background-color: var(--clr-white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: var(--clr-black);
@@ -117,7 +117,7 @@
     display: flex;
     list-style: none;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   li {
