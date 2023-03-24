@@ -22,7 +22,7 @@
 <HeroImage
   title={"Prepare for Adventure"}
   src="/assets/images/hero/hero-29.webp"
-  height={"medium"}
+  height={"large"}
 />
 
 <div class="page">

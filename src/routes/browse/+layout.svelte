@@ -30,5 +30,10 @@
     :global(.products-grid) {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    :global(.page) {
+      margin-top: unset;
+      margin-inline: 1rem;
+    }
   }
 </style>

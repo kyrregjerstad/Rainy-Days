@@ -1,5 +1,6 @@
 <script>
   import Parallax from "$lib/scripts/animation/parallax";
+  import { onMount } from "svelte";
 
   export let title = "Rainy Days";
   export let subtitle = "";
@@ -8,19 +9,23 @@
   export let hasParallax = true;
   export let height;
 
+  let sectionHeight = "40vw";
+
   switch (height) {
     case "small":
-      height = "20vw";
+      sectionHeight = "20vw";
       break;
     case "medium":
-      height = "40vw";
+      sectionHeight = "40vw";
       break;
     case "large":
-      height = "50vw";
+      sectionHeight = "50vw";
       break;
     default:
-      height = "unset";
+      sectionHeight = "unset";
   }
+
+  $: console.log(sectionHeight);
 
   const imageParallax = new Parallax({
     speed: 0.5,
@@ -59,7 +64,7 @@
   class="hero"
   bind:clientHeight
   bind:offsetHeight
-  style={`height: ${height}`}
+  style="height: {sectionHeight}"
 >
   <div class="text" style:transform={textTransform}>
     <h1>{title}</h1>
@@ -106,6 +111,7 @@
   }
   .text h2 {
     font-size: 2rem;
+    font-size: clamp(1rem, 6vw, 5rem);
   }
 
   .image-container {
@@ -114,6 +120,7 @@
     object-position: 100% 100%;
     transition: all 0.5s ease;
   }
+
   .image-container img {
     width: 100%;
   }
