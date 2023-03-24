@@ -8,7 +8,6 @@
     <li><a href="/browse/women">women</a></li>
     <li><a href="/browse/collections">collections</a></li>
     <hr />
-    <li><a href="#">search</a></li>
     <li><a href="/favourites">favourites</a></li>
     <li><a href="/cart">shopping bag</a></li>
   </ul>
