@@ -37,7 +37,11 @@
   </div>
 </section>
 <div class="images">
-  <img src="/assets/images/hero/hero-29.webp" alt="" />
+  <img
+    id="full-width-image"
+    src="/assets/images/hero/hero-29.webp"
+    alt="Adventure in the mountains"
+  />
 </div>
 
 <style>
@@ -68,5 +72,9 @@
 
   section {
     margin-block: 3rem;
+  }
+
+  #full-width-image {
+    width: 100%;
   }
 </style>
