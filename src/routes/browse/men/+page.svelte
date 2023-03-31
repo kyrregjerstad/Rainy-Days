@@ -11,6 +11,10 @@
 
   let sortedInventory = inventory;
 
+  export let data;
+  $: ({ products } = data);
+  $: console.log(products);
+
   $: $filterOptions,
     (sortedInventory = sortInventory(inventory, $filterOptions, "Men"));
 </script>
