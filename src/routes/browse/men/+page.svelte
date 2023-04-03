@@ -11,12 +11,13 @@
 
   let sortedInventory = inventory;
 
-  export let data;
-  $: ({ products } = data);
-  $: console.log(products);
-
   $: $filterOptions,
     (sortedInventory = sortInventory(inventory, $filterOptions, "Men"));
+
+  export let data;
+
+  $: ({ allProducts } = data);
+  $: console.log(allProducts);
 </script>
 
 <svelte:head>
@@ -44,7 +45,14 @@
     <FilterLabels />
   </div>
   <div class="products-grid">
-    {#each sortedInventory as product}
+    {#each allProducts as product}
+      <Product
+        productName={product.name}
+        productPrice={product.price}
+        productId={product.id}
+      />
+    {/each}
+    <!-- {#each sortedInventory as product}
       {#if product.gender === "Men" || product.gender === "Unisex"}
         <Product
           productName={product.name}
@@ -52,7 +60,7 @@
           productId={product.id}
         />
       {/if}
-    {/each}
+    {/each} -->
   </div>
 </div>
 
