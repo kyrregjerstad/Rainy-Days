@@ -11,6 +11,9 @@
 
   $: $filterOptions,
     (sortedInventory = sortInventory(inventory, $filterOptions));
+
+  export let data;
+  $: ({ allProducts } = data);
 </script>
 
 <svelte:head>
@@ -20,13 +23,9 @@
 <HeroImage title={"Peak Performance"} src="/assets/images/hero/hero-13.webp" />
 
 <div class="products-grid">
-  {#each sortedInventory as product}
-    {#if product.gender === "Men" || product.gender === "Unisex"}
-      <Product
-        productName={product.name}
-        productPrice={product.price}
-        productId={product.id}
-      />
+  {#each allProducts as product}
+    {#if product.categories[2].slug === "men" || product.categories[2].slug === "unisex"}
+      <Product {product} />
     {/if}
   {/each}
 </div>
@@ -38,6 +37,14 @@
 />
 
 <div class="products-grid">
+  {#each allProducts as product}
+    {#if product.categories[2].slug === "women" || product.categories[2].slug === "unisex"}
+      <Product {product} />
+    {/if}
+  {/each}
+</div>
+
+<!-- <div class="products-grid">
   {#each sortedInventory as product}
     {#if product.gender === "Men" || product.gender === "Unisex"}
       <Product
@@ -47,8 +54,7 @@
       />
     {/if}
   {/each}
-</div>
-
+</div> -->
 <style>
   .page {
     margin-top: 5rem;

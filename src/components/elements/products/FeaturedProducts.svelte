@@ -1,19 +1,14 @@
 <script>
   import { inventory } from "@stores/inventory";
   import Product from "./Product.svelte";
+
+  export let allProducts;
 </script>
 
 <section class="featured-products">
-  {#each inventory as product}
-    {#if product.isFeatured}
-      <Product
-        productId={product.id}
-        productName={product.name}
-        productDescription={product.description}
-        productPrice={product.price}
-        productImage={product.image}
-        isFeatured={product.isFeatured}
-      />
+  {#each allProducts as product}
+    {#if product.featured}
+      <Product {product} />
     {/if}
   {/each}
 </section>

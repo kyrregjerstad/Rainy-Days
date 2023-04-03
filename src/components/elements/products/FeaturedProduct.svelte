@@ -1,4 +1,5 @@
 <script>
+  //TODO this is just a sample from product, need to create new featured product component
   import AddToFavorites from "../../elements/buttons/AddToFavorites.svelte";
 
   export let product;
@@ -8,18 +9,24 @@
 </script>
 
 <div class="product-container">
-  <div class="buttons">
-    <AddToFavorites bind:id />
-  </div>
+  {#if !featured}
+    <div class="buttons">
+      <AddToFavorites bind:id />
+    </div>
+  {:else}
+    <div class="featured-title">{name}</div>
+  {/if}
 
   <a href="/browse/{name}">
     <div class="product-image">
       <img {src} alt="{name} - {description}" />
     </div>
-    <div class="product-info">
-      <h3>{name}</h3>
-      <p>€ {price}</p>
-    </div>
+    {#if !featured}
+      <div class="product-info">
+        <h3>{name}</h3>
+        <p>€ {price}</p>
+      </div>
+    {/if}
   </a>
 </div>
 

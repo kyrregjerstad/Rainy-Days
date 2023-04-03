@@ -15,9 +15,7 @@
     (sortedInventory = sortInventory(inventory, $filterOptions, "Men"));
 
   export let data;
-
   $: ({ allProducts } = data);
-  $: console.log(allProducts);
 </script>
 
 <svelte:head>
@@ -46,11 +44,9 @@
   </div>
   <div class="products-grid">
     {#each allProducts as product}
-      <Product
-        productName={product.name}
-        productPrice={product.price}
-        productId={product.id}
-      />
+      {#if product.categories[2].slug === "men" || product.categories[2].slug === "unisex"}
+        <Product {product} />
+      {/if}
     {/each}
     <!-- {#each sortedInventory as product}
       {#if product.gender === "Men" || product.gender === "Unisex"}

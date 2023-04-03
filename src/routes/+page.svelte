@@ -6,6 +6,9 @@
   import FullWidthImageSection from "@components/layout/images/FullWidthImageSection.svelte";
   import HeroImage from "@components/layout/images/HeroImage.svelte";
   import TextBlock from "@components/layout/TextBlock.svelte";
+
+  export let data;
+  $: ({ allProducts } = data);
 </script>
 
 <svelte:head>
@@ -13,7 +16,7 @@
 </svelte:head>
 
 <HeroImage title={"Adventure Awaits"} hasCTA />
-<FeaturedProducts />
+<FeaturedProducts {allProducts} />
 <FeaturedCollections />
 <FeaturedText />
 <FullWidthImageSection />
