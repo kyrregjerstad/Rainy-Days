@@ -3,7 +3,7 @@
 
   export let product;
 
-  let { id, name, description, price, featured } = product;
+  let { id, name, description, price, featured, slug } = product;
   const src = product.images[0].src;
 </script>
 
@@ -12,7 +12,7 @@
     <AddToFavorites bind:id />
   </div>
 
-  <a href="/browse/{name}">
+  <a href="/browse/{slug}?id={id}">
     <div class="product-image">
       <img {src} alt="{name} - {description}" />
     </div>

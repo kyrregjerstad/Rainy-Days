@@ -5,13 +5,15 @@
   import { sineInOut } from "svelte/easing";
   import AddToFavorites from "../buttons/AddToFavorites.svelte";
 
+  export let allProducts;
   export let item;
   export let type = "cart";
 
   const { id, quantity, size, color, cartItemId } = item;
 
   let quantityString = quantity.toString();
-  const inventoryProduct = inventory.find((item) => item.id === id);
+  const inventoryProduct = allProducts.find((item) => item.id === id);
+  const src = inventoryProduct.images[0].src;
   export const price = inventoryProduct.price;
 </script>
 
@@ -21,10 +23,7 @@
 >
   <div class="order-item-image">
     <a href="/browse/{inventoryProduct.name}">
-      <img
-        src="/assets/images/products/{id}.webp"
-        alt="{inventoryProduct.name} Rain Jacket from Rainy Days"
-      />
+      <img {src} alt="{inventoryProduct.name} Rain Jacket from Rainy Days" />
     </a>
   </div>
   <div class="order-item-info">
@@ -40,7 +39,7 @@
             ><span class="material-symbols-outlined"> delete </span></button
           >
           <div class="pipe-separator">|</div>
-          <AddToFavorites productId={id} />
+          <AddToFavorites {id} />
         </div>
       {/if}
     </div>

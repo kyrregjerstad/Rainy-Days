@@ -1,9 +1,9 @@
 <script>
   import { userFavorites } from "@stores/user-favorites";
   import Product from "@components/elements/products/Product.svelte";
-  import { inventory } from "@stores/inventory";
 
-  console.log($userFavorites.length);
+  export let data;
+  $: ({ allProducts } = data);
 </script>
 
 <svelte:head>
@@ -18,13 +18,9 @@
 {/if}
 <div class="user-favorites">
   {#each $userFavorites as favorite}
-    {#each inventory as product}
+    {#each allProducts as product}
       {#if product.id === favorite.id}
-        <Product
-          productName={product.name}
-          productPrice={product.price}
-          productId={product.id}
-        />
+        <Product {product} />
       {/if}
     {/each}
   {/each}

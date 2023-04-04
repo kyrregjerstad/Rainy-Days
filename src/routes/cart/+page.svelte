@@ -2,6 +2,9 @@
   import OrderItem from "@components/elements/products/orderItem.svelte";
   import { cart } from "@stores/shopping-cart";
 
+  export let data;
+  $: ({ allProducts } = data);
+
   let totalPrice = 0;
   let subtotal = 0;
   let delivery = 0;
@@ -35,7 +38,7 @@
     </h2>
     {#each $cart as item (item.cartItemId)}
       <hr class="order-item-divider" />
-      <OrderItem {item} bind:price={productPrice} />
+      <OrderItem {item} {allProducts} bind:price={productPrice} />
     {/each}
   </section>
   <section class="summary">

@@ -2,19 +2,16 @@
   import Product from "@components/elements/products/Product.svelte";
   import { inventory } from "@stores/inventory";
 
-  export let currentProductId;
+  export let currentProduct;
+  export let allProducts;
 </script>
 
 <section>
   <h2>Similar Items</h2>
   <div class="similar-items-grid">
-    {#each inventory as product, i}
-      {#if i < 6 && product.id !== currentProductId}
-        <Product
-          productName={product.name}
-          productPrice={product.price}
-          productId={product.id}
-        />
+    {#each allProducts as product, i}
+      {#if i < 6 && product.id !== currentProduct.id}
+        <Product {product} />
       {/if}
     {/each}
   </div>

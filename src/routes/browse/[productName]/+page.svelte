@@ -1,5 +1,5 @@
 <script>
-  import { addToCart } from "@stores/shopping-cart";
+  import { addToCart, cart } from "@stores/shopping-cart";
   import AddToFavorites from "@components/elements/buttons/AddToFavorites.svelte";
   import SimilarItems from "@components/elements/products/SimilarItems.svelte";
   import ColorSelectorGroup from "@components/elements/selectors/ColorSelectorGroup.svelte";
@@ -9,12 +9,16 @@
 
   /** @type {import('./$types').LayoutData} */
   export let data;
-  let { product } = data;
-  $: product = data.product;
-  $: availableColors = product.availableColors;
-  $: availableSizes = product.availableSizes;
+  $: ({ product, allProducts } = data);
+  $: console.log(product);
+  $: ({ id, name, description, price } = product);
+  $: src = product.images[0].src;
 
-  let { availableColors, availableSizes } = product;
+  $: availableColors = product.attributes[0].options;
+  $: availableSizes = product.attributes[4].options;
+
+  $: console.log($cart);
+
   let selectedSize;
   let selectedColor;
   let buttonText = "Add to bag";
@@ -35,28 +39,25 @@
 </script>
 
 <svelte:head>
-  <title>Rainy Days | {product.name}</title>
+  <title>Rainy Days | {name}</title>
 </svelte:head>
 
-<FullScreenImageModal
-  src={`/assets/images/products/${product.id}.webp`}
-  bind:modalIsOpen
-/>
+<FullScreenImageModal {src} bind:modalIsOpen />
 <div class="page-wrapper">
   <div class="product-page">
     <div class="image-wrapper">
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <img
         class="product-image"
-        src="/assets/images/products/{product.id}.webp"
-        alt={product.name}
+        {src}
+        alt={name}
         on:click={() => (modalIsOpen = true)}
       />
     </div>
     <section class="product-text">
-      <h1>{product.name}</h1>
-      <p>€{product.price}</p>
-      <p>{product.description}</p>
+      <h1>{name}</h1>
+      <p>€{price}</p>
+      <p>{description}</p>
       <div class="available-colors">
         <ColorSelectorGroup {availableColors} bind:selectedColor />
       </div>
@@ -67,11 +68,7 @@
           on:click={() => cartHandler(product, selectedSize, selectedColor)}
           >{buttonText}
         </button>
-        <AddToFavorites
-          tooltip={false}
-          fontSize={"3.5rem"}
-          productId={product.id}
-        />
+        <AddToFavorites tooltip={false} fontSize={"3.5rem"} {id} />
       </div>
       <p>
         <!-- /* spell-checker: disable */-->
@@ -90,7 +87,7 @@
     </section>
   </div>
 </div>
-<SimilarItems currentProductId={product.id} />
+<SimilarItems {allProducts} currentProduct={product} />
 <h2>Featured Collections</h2>
 <FeaturedCollections />
 

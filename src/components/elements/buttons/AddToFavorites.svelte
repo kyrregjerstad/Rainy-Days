@@ -3,15 +3,13 @@
   import { userFavorites } from "@stores/user-favorites";
 
   export let isFavorite = false;
-  export let productId;
+  export let id;
   export let tooltip = true;
   export let fontSize = "1.5rem";
 
   function toggleFavorite() {
     if (isFavorite) {
-      $userFavorites = $userFavorites.filter(
-        (favorite) => favorite.id !== productId
-      );
+      $userFavorites = $userFavorites.filter((favorite) => favorite.id !== id);
       isFavorite = false;
     } else {
       addToFavorites();
@@ -19,17 +17,17 @@
   }
 
   function addToFavorites() {
-    if ($userFavorites.find((favorite) => favorite.id === productId)) {
+    if ($userFavorites.find((favorite) => favorite.id === id)) {
       console.log("Already in favorites");
       isFavorite = false;
       return;
     }
-    $userFavorites = [...$userFavorites, { id: productId }];
+    $userFavorites = [...$userFavorites, { id: id }];
     isFavorite = true;
   }
 
   function checkIfFavorite() {
-    if ($userFavorites.find((favorite) => favorite.id === productId)) {
+    if ($userFavorites.find((favorite) => favorite.id === id)) {
       isFavorite = true;
     }
   }
