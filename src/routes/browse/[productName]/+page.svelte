@@ -6,18 +6,17 @@
   import FeaturedCollections from "@components/layout/FeaturedCollections.svelte";
   import SizeSelectorGroup from "@components/elements/selectors/SizeSelectorGroup.svelte";
   import FullScreenImageModal from "@components/layout/images/FullScreenImageModal.svelte";
+  import { removeOuterTags } from "@utils/removeOuterTags";
+  import { onMount } from "svelte";
 
   /** @type {import('./$types').LayoutData} */
   export let data;
   $: ({ product, allProducts } = data);
-  $: console.log(product);
   $: ({ id, name, description, price } = product);
   $: src = product.images[0].src;
 
   $: availableColors = product.attributes[0].options;
   $: availableSizes = product.attributes[4].options;
-
-  $: console.log($cart);
 
   let selectedSize;
   let selectedColor;
@@ -36,6 +35,10 @@
       alert("Please select a size and color");
     }
   }
+
+  onMount(() => {
+    description = removeOuterTags(description);
+  });
 </script>
 
 <svelte:head>

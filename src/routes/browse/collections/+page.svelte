@@ -7,13 +7,13 @@
   import { filterOptions } from "@stores/searchFilters";
   import HeroImage from "@components/layout/images/HeroImage.svelte";
 
-  let sortedInventory = inventory;
-
-  $: $filterOptions,
-    (sortedInventory = sortInventory(inventory, $filterOptions));
-
   export let data;
   $: ({ allProducts } = data);
+
+  let sortedProducts = allProducts || [];
+
+  $: $filterOptions,
+    (sortedProducts = sortInventory(allProducts, $filterOptions, "Unisex"));
 </script>
 
 <svelte:head>

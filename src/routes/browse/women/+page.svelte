@@ -9,13 +9,13 @@
   import HeroImage from "@components/layout/images/HeroImage.svelte";
   import FilterLabels from "@components/filters and sort/FilterLabels.svelte";
 
-  let sortedInventory = inventory;
-
-  $: $filterOptions,
-    (sortedInventory = sortInventory(inventory, $filterOptions, "women"));
-
   export let data;
   $: ({ allProducts } = data);
+
+  let sortedProducts = allProducts || [];
+
+  $: $filterOptions,
+    (sortedProducts = sortInventory(allProducts, $filterOptions, "Women"));
 </script>
 
 <svelte:head>
@@ -32,12 +32,12 @@
 <div class="page">
   <FilterAndSortButton />
   <div>
-    {#if sortedInventory.length === 0}
+    {#if sortedProducts.length === 0}
       No items found
-    {:else if sortedInventory.length === 1}
+    {:else if sortedProducts.length === 1}
       1 item
     {:else}
-      {sortedInventory.length} items
+      {sortedProducts.length} items
     {/if}
   </div>
   <div class="user-filters">

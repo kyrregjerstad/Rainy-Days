@@ -2,17 +2,21 @@
 function sortByGender(inventory, gender) {
   return inventory.filter(
     (product) =>
-      product.gender.toLowerCase() === gender.toLowerCase() ||
-      product.gender === "Unisex"
+      product.categories[2].name.toLowerCase() === gender.toLowerCase() ||
+      product.categories[2].name === "Unisex"
   );
 }
 
 function sortByPriceAscending(inventory) {
-  return inventory.sort((a, b) => a.price - b.price);
+  return inventory.sort(
+    (a, b) => parseInt(a.price, 10) - parseInt(b.price, 10)
+  );
 }
 
 function sortByPriceDescending(inventory) {
-  return inventory.sort((a, b) => b.price - a.price);
+  return inventory.sort(
+    (a, b) => parseInt(b.price, 10) - parseInt(a.price, 10)
+  );
 }
 
 function sortBySize(inventory, sizes = []) {
@@ -23,7 +27,7 @@ function sortBySize(inventory, sizes = []) {
   sizes = sizes.map((size) => size.toUpperCase());
 
   return inventory.filter((product) =>
-    sizes.some((size) => product.availableSizes.includes(size))
+    sizes.some((size) => product.attributes[4].options.includes(size))
   );
 }
 
@@ -36,7 +40,7 @@ function sortBySeason(inventory, seasons = []) {
   );
 
   return inventory.filter((product) =>
-    seasons.some((season) => product.season.includes(season))
+    seasons.some((season) => product.attributes[3].options[0].includes(season))
   );
 }
 
@@ -50,7 +54,7 @@ function sortByColor(inventory, colors = []) {
   );
 
   return inventory.filter((product) =>
-    colors.some((color) => product.availableColors.includes(color))
+    colors.some((color) => product.attributes[0].options.includes(color))
   );
 }
 
