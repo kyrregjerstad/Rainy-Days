@@ -55,7 +55,7 @@
       />
     </div>
     <section class="product-text">
-      <h1>{name}</h1>
+      <h1 id="product-name">{name}</h1>
       <p>€{price}</p>
       <p>{description}</p>
       <div class="available-colors">

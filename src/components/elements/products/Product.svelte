@@ -5,6 +5,10 @@
 
   let { id, name, description, price, featured, slug } = product;
   const src = product.images[0].src;
+
+  function scrollToTop() {
+    document.body.scrollIntoView({ behavior: "smooth" });
+  }
 </script>
 
 <div class="product-container">
@@ -12,7 +16,7 @@
     <AddToFavorites bind:id />
   </div>
 
-  <a href="/browse/{slug}?id={id}">
+  <a href="/browse/{slug}?id={id}" on:click={() => scrollToTop()}>
     <div class="product-image">
       <img {src} alt="{name} - {description}" />
     </div>

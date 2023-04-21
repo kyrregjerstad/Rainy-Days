@@ -108,7 +108,7 @@
 
     background-color: white;
 
-    max-height: 20rem;
+    max-height: 17.75rem;
   }
 
   .summary > * {

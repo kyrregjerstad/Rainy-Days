@@ -31,7 +31,6 @@
   <section>
     <h3>Price</h3>
     <div>
-      <label for="price-ascending">Low to High</label>
       <input
         type="radio"
         name="sort-by"
@@ -39,9 +38,9 @@
         value="lowToHigh"
         bind:group={$filterOptions.sortBy}
       />
+      <label for="price-ascending">Low to High</label>
     </div>
     <div>
-      <label for="price-descending">High to Low</label>
       <input
         type="radio"
         name="sort-by"
@@ -49,12 +48,12 @@
         value="highToLow"
         bind:group={$filterOptions.sortBy}
       />
+      <label for="price-descending">High to Low</label>
     </div>
   </section>
   <section>
     <h2>Season</h2>
     <div>
-      <label for="winter">Winter</label>
       <input
         type="checkbox"
         name="seasons"
@@ -62,9 +61,9 @@
         value="winter"
         bind:group={$filterOptions.selectedSeasons}
       />
+      <label for="winter">Winter</label>
     </div>
     <div>
-      <label for="spring">Spring</label>
       <input
         type="checkbox"
         name="seasons"
@@ -72,9 +71,9 @@
         value="spring"
         bind:group={$filterOptions.selectedSeasons}
       />
+      <label for="spring">Spring</label>
     </div>
     <div>
-      <label for="summer">Summer</label>
       <input
         type="checkbox"
         name="seasons"
@@ -82,9 +81,9 @@
         value="summer"
         bind:group={$filterOptions.selectedSeasons}
       />
+      <label for="summer">Summer</label>
     </div>
     <div>
-      <label for="autumn">Autumn</label>
       <input
         type="checkbox"
         name="seasons"
@@ -92,12 +91,12 @@
         value="autumn"
         bind:group={$filterOptions.selectedSeasons}
       />
+      <label for="autumn">Autumn</label>
     </div>
   </section>
   <section>
     <h3>Colour</h3>
     <div>
-      <label for="red">Red</label>
       <input
         type="checkbox"
         name="colour"
@@ -105,9 +104,9 @@
         value="red"
         bind:group={$filterOptions.selectedColors}
       />
+      <label for="red">Red</label>
     </div>
     <div>
-      <label for="blue">Blue</label>
       <input
         type="checkbox"
         name="colour"
@@ -115,9 +114,9 @@
         value="blue"
         bind:group={$filterOptions.selectedColors}
       />
+      <label for="blue">Blue</label>
     </div>
     <div>
-      <label for="green">Green</label>
       <input
         type="checkbox"
         name="colour"
@@ -125,9 +124,9 @@
         value="green"
         bind:group={$filterOptions.selectedColors}
       />
+      <label for="green">Green</label>
     </div>
     <div>
-      <label for="yellow">Yellow</label>
       <input
         type="checkbox"
         name="colour"
@@ -135,9 +134,9 @@
         value="yellow"
         bind:group={$filterOptions.selectedColors}
       />
+      <label for="yellow">Yellow</label>
     </div>
     <div>
-      <label for="orange">Orange</label>
       <input
         type="checkbox"
         name="colour"
@@ -145,9 +144,9 @@
         value="orange"
         bind:group={$filterOptions.selectedColors}
       />
+      <label for="orange">Orange</label>
     </div>
     <div>
-      <label for="purple">Purple</label>
       <input
         type="checkbox"
         name="colour"
@@ -155,6 +154,7 @@
         value="purple"
         bind:group={$filterOptions.selectedColors}
       />
+      <label for="purple">Purple</label>
     </div>
   </section>
   <section>
@@ -162,7 +162,6 @@
       <h3>Sizes</h3>
 
       <div>
-        <label for="XS">XS</label>
         <input
           type="checkbox"
           name="size"
@@ -170,7 +169,7 @@
           value="XS"
           bind:group={$filterOptions.selectedSizes}
         />
-        <label for="S">S</label>
+        <label for="XS">XS</label>
         <input
           type="checkbox"
           name="size"
@@ -178,7 +177,7 @@
           value="S"
           bind:group={$filterOptions.selectedSizes}
         />
-        <label for="M">M</label>
+        <label for="S">S</label>
         <input
           type="checkbox"
           name="size"
@@ -186,7 +185,7 @@
           value="M"
           bind:group={$filterOptions.selectedSizes}
         />
-        <label for="L">L</label>
+        <label for="M">M</label>
         <input
           type="checkbox"
           name="size"
@@ -194,7 +193,7 @@
           value="L"
           bind:group={$filterOptions.selectedSizes}
         />
-        <label for="XL">S</label>
+        <label for="L">L</label>
         <input
           type="checkbox"
           name="size"
@@ -202,7 +201,7 @@
           value="XL"
           bind:group={$filterOptions.selectedSizes}
         />
-        <label for="XXL">XXL</label>
+        <label for="XL">S</label>
         <input
           type="checkbox"
           name="size"
@@ -210,6 +209,7 @@
           value="XXL"
           bind:group={$filterOptions.selectedSizes}
         />
+        <label for="XXL">XXL</label>
       </div>
     </div>
   </section>

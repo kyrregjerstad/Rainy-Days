@@ -1,13 +1,3 @@
-// import { inventory } from "$lib/stores/inventory";
-
-// /** @type {import('./$types').LayoutLoad} */
-// export const load = async ({ url: { pathname } }) => {
-//   const productName = pathname.split("/")[2].replace(/%20/g, " ");
-//   const product = inventory.find(
-//     (item) => item.name.toLowerCase() === productName.toLowerCase()
-//   );
-//   return { pathname, product };
-// };
 import { page } from "$app/stores";
 import { PUBLIC_API_BASE_URL } from "$env/static/public";
 import { PRIVATE_WC_USERNAME } from "$env/static/private";

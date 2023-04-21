@@ -3,7 +3,8 @@ import Lenis from "@studio-freight/lenis";
 export function lenisInit() {
   const lenis = new Lenis({
     duration: 0.9,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    // lerp: 0.1,
+    // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     direction: "vertical",
     gestureDirection: "vertical",
     smooth: true,
