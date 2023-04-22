@@ -6,8 +6,6 @@
   import FeaturedCollections from "@components/layout/FeaturedCollections.svelte";
   import SizeSelectorGroup from "@components/elements/selectors/SizeSelectorGroup.svelte";
   import FullScreenImageModal from "@components/layout/images/FullScreenImageModal.svelte";
-  import { removeOuterTags } from "@utils/removeOuterTags";
-  import { onMount } from "svelte";
 
   /** @type {import('./$types').LayoutData} */
   export let data;
@@ -35,10 +33,6 @@
       alert("Please select a size and color");
     }
   }
-
-  onMount(() => {
-    description = removeOuterTags(description);
-  });
 </script>
 
 <svelte:head>
