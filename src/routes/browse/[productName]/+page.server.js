@@ -1,7 +1,5 @@
 import { page } from "$app/stores";
 import { PUBLIC_API_BASE_URL } from "$env/static/public";
-import { PRIVATE_WC_USERNAME } from "$env/static/private";
-import { PRIVATE_WC_PASSWORD } from "$env/static/private";
 import { PRIVATE_WC_AUTH_HEADER } from "$env/static/private";
 
 const productEndpoint = "wp-json/wc/v3/products";

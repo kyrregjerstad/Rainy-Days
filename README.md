@@ -46,8 +46,6 @@ The `.env` file should look something like this:
 
 ```bash
 PUBLIC_API_BASE_URL=https://your-api-base-url.com
-PRIVATE_WC_USERNAME=YourWoocommerceUsername
-PRIVATE_WC_PASSWORD=YourWoocommercePassword
 PRIVATE_WC_AUTH_HEADER="Basic YourWoocommerceAuthHeader"
 ```
 
