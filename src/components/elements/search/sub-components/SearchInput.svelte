@@ -4,8 +4,8 @@
   export let searchInput;
 </script>
 
-<!-- svelte-ignore a11y-autofocus -->
 <label for="search" class="visually-hidden">search</label>
+<!-- svelte-ignore a11y-autofocus -->
 <input
   type="search"
   name="search"

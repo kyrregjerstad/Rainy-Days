@@ -22,6 +22,3 @@
 <FullWidthImageSection />
 <TextBlock />
 <TestimonialsSection />
-
-<style>
-</style>

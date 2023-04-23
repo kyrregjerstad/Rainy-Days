@@ -4,7 +4,6 @@
   export let product;
   export let index;
   export let selectedIndex;
-  export let selectedItem;
   let href = `/browse/${product.name}`;
   export let externalHref;
 
