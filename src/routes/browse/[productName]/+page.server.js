@@ -18,10 +18,15 @@ export const load = async ({ fetch, url: { searchParams } }) => {
   const productId = searchParams.get("id");
 
   const fetchProduct = async () => {
-    const response = await fetch(`${URL}/${productId}`, requestOptions);
-    const product = await response.json();
-    product.description = removeOuterTags(product.description);
-    return product;
+    try {
+      const response = await fetch(`${URL}/${productId}`, requestOptions);
+      const product = await response.json();
+      product.description = removeOuterTags(product.description);
+      return product;
+    } catch (error) {
+      console.warn("There was an error fetching: " + error);
+      return null;
+    }
   };
 
   return {

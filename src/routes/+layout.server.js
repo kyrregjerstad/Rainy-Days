@@ -15,9 +15,14 @@ export const load = async ({ fetch }) => {
   };
 
   const fetchAllProducts = async () => {
-    const response = await fetch(URL, requestOptions);
-    const products = await response.json();
-    return products;
+    try {
+      const response = await fetch(URL, requestOptions);
+      const products = await response.json();
+      return products;
+    } catch (error) {
+      console.warn("There was an error fetching: " + error);
+      return null;
+    }
   };
 
   return {
