@@ -6,15 +6,19 @@
   import FeaturedCollections from "@components/layout/FeaturedCollections.svelte";
   import SizeSelectorGroup from "@components/elements/selectors/SizeSelectorGroup.svelte";
   import FullScreenImageModal from "@components/layout/images/FullScreenImageModal.svelte";
+  import { inventory } from "@stores/inventory";
 
-  /** @type {import('./$types').LayoutData} */
   export let data;
-  $: ({ product, allProducts } = data);
-  $: ({ id, name, description, price } = product);
-  $: src = product.images[0].src;
+  $: ({ slugId } = data);
 
-  $: availableColors = product.attributes[0].options;
-  $: availableSizes = product.attributes[4].options;
+  $: allProducts = inventory;
+
+  $: product = inventory.find((product) => product.id === slugId);
+
+  $: src = `/assets/images/products/${product.slug}.webp`;
+
+  $: availableColors = ["green"];
+  $: availableSizes = ["S", "M", "L", "XL"];
 
   let selectedSize;
   let selectedColor;
@@ -36,7 +40,7 @@
 </script>
 
 <svelte:head>
-  <title>Rainy Days | {name}</title>
+  <title>Rainy Days | {product.name}</title>
 </svelte:head>
 
 <FullScreenImageModal {src} bind:modalIsOpen />
@@ -44,17 +48,18 @@
   <div class="product-page">
     <div class="image-wrapper">
       <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
       <img
         class="product-image"
         {src}
-        alt={name}
+        alt={product.name}
         on:click={() => (modalIsOpen = true)}
       />
     </div>
     <section class="product-text">
-      <h1 id="product-name">{name}</h1>
-      <p>€{price}</p>
-      <p>{description}</p>
+      <h1 id="product-name">{product.name}</h1>
+      <p>€{product.price}</p>
+      <p>{product.description}</p>
       <div class="available-colors">
         <ColorSelectorGroup {availableColors} bind:selectedColor />
       </div>
@@ -65,7 +70,7 @@
           on:click={() => cartHandler(product, selectedSize, selectedColor)}
           >{buttonText}
         </button>
-        <AddToFavorites tooltip={false} fontSize={"3.5rem"} {id} />
+        <AddToFavorites tooltip={false} fontSize={"3.5rem"} id={product.id} />
       </div>
       <p>
         <!-- /* spell-checker: disable */-->

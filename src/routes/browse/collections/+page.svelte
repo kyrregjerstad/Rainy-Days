@@ -7,8 +7,7 @@
   import { filterOptions } from "@stores/searchFilters";
   import HeroImage from "@components/layout/images/HeroImage.svelte";
 
-  export let data;
-  $: ({ allProducts } = data);
+  $: allProducts = inventory;
 
   let sortedProducts = allProducts || [];
 
@@ -24,7 +23,7 @@
 
 <div class="products-grid">
   {#each allProducts as product}
-    {#if product.categories[2].slug === "men" || product.categories[2].slug === "unisex"}
+    {#if product.gender === "Men" || product.gender === "Unisex"}
       <Product {product} />
     {/if}
   {/each}
@@ -38,7 +37,7 @@
 
 <div class="products-grid">
   {#each allProducts as product}
-    {#if product.categories[2].slug === "women" || product.categories[2].slug === "unisex"}
+    {#if product.gender === "Women" || product.gender === "Unisex"}
       <Product {product} />
     {/if}
   {/each}

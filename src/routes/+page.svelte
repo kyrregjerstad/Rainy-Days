@@ -6,9 +6,9 @@
   import FullWidthImageSection from "@components/layout/images/FullWidthImageSection.svelte";
   import HeroImage from "@components/layout/images/HeroImage.svelte";
   import TextBlock from "@components/layout/TextBlock.svelte";
+  import { inventory } from "@stores/inventory.js";
 
-  export let data;
-  $: ({ allProducts } = data);
+  $: allProducts = inventory;
 </script>
 
 <svelte:head>

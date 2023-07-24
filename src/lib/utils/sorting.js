@@ -2,8 +2,8 @@
 function sortByGender(inventory, gender) {
   return inventory.filter(
     (product) =>
-      product.categories[2].name.toLowerCase() === gender.toLowerCase() ||
-      product.categories[2].name === "Unisex"
+      product.gender.toLowerCase() === gender.toLowerCase() ||
+      product.gender === "Unisex"
   );
 }
 

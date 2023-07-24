@@ -2,15 +2,14 @@
   // @ts-nocheck
 
   import Product from "@components/elements/products/Product.svelte";
-  import { inventory } from "@stores/inventory";
   import { sortInventory } from "@utils/sorting";
   import FilterAndSortButton from "@components/elements/buttons/FilterAndSortButton.svelte";
   import { filterOptions } from "@stores/searchFilters";
   import HeroImage from "@components/layout/images/HeroImage.svelte";
   import FilterLabels from "@components/filters and sort/FilterLabels.svelte";
+  import { inventory } from "@stores/inventory.js";
 
-  export let data;
-  $: ({ allProducts } = data);
+  $: allProducts = inventory;
 
   let sortedProducts = allProducts || [];
 
@@ -45,7 +44,7 @@
   </div>
   <div class="products-grid">
     {#each allProducts as product}
-      {#if product.categories[2].slug === "women" || product.categories[2].slug === "unisex"}
+      {#if product.gender === "Women" || product.gender === "Unisex"}
         <Product {product} />
       {/if}
     {/each}

@@ -4,7 +4,7 @@
   export let product;
 
   let { id, name, description, price, featured, slug } = product;
-  const src = product.images[0].src;
+  const src = `/assets/images/products/${slug}.webp`;
 
   function scrollToTop() {
     document.body.scrollIntoView({ behavior: "smooth" });

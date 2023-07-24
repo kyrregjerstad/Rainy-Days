@@ -5,6 +5,7 @@ export const inventory = [
     id: "KWP1VF-zPtOO",
     isFeatured: true,
     name: "Stormbreaker",
+    slug: "stormbreaker",
     description:
       "A waterproof and breathable jacket designed for hiking and camping. Made from durable materials, this jacket will keep you comfortable in any weather conditions.",
     availableColors: ["Black", "Navy", "Green"],
@@ -22,6 +23,7 @@ export const inventory = [
     id: "7sY-NQbaGGKp",
     isFeatured: false,
     name: "Arctic Explorer",
+    slug: "arctic-explorer",
     description:
       "A high-performance jacket designed for extreme weather conditions. Made from premium materials, this jacket will keep you warm and dry in even the coldest environments.",
     availableColors: ["Black", "Blue", "Red"],
@@ -39,6 +41,7 @@ export const inventory = [
     id: "l6gtxAyIny-C",
     isFeatured: true,
     name: "Rainforest Runner",
+    slug: "rainforest-runner",
     description:
       "A lightweight and packable jacket designed for runners and other outdoor athletes. Made from breathable materials, this jacket is perfect for staying dry during intense activity.",
     availableColors: ["Gray", "Yellow", "Orange"],
@@ -56,6 +59,7 @@ export const inventory = [
     id: "hu9zVzUTXKCH",
     isFeatured: true,
     name: "Trailblazer",
+    slug: "trailblazer",
     description:
       "A versatile jacket designed for a variety of outdoor activities. Made from waterproof and windproof materials, this jacket can handle anything from hiking to kayaking.",
     availableColors: ["Black", "Purple", "Green"],
@@ -73,6 +77,7 @@ export const inventory = [
     id: "LNzxw-zTD0u2",
     isFeatured: false,
     name: "Mountain Peak",
+    slug: "mountain-peak",
     description:
       "A rugged and durable jacket designed for mountaineering and other extreme outdoor activities. Made from heavy-duty materials, this jacket is built to withstand harsh weather conditions.",
     availableColors: ["Black", "Gray", "Red"],
@@ -90,6 +95,7 @@ export const inventory = [
     id: "y5QvYShzlJ-w",
     isFeatured: false,
     name: "Rainy Day",
+    slug: "rainy-day",
     description:
       "A classic and timeless rain jacket designed for everyday wear. Made from water-resistant materials, this jacket is a must-have for anyone who wants to stay dry in style.",
     availableColors: ["Navy", "Gray", "Yellow"],
@@ -107,6 +113,7 @@ export const inventory = [
     id: "nbPd_vwx3aLZ",
     isFeatured: false,
     name: "Explorer",
+    slug: "explorer",
     description:
       "A mid-weight jacket designed for exploring the great outdoors. Made from breathable and moisture-wicking materials, this jacket is perfect for a variety of outdoor activities.",
     isFeatured: false,
@@ -125,6 +132,7 @@ export const inventory = [
     id: "WkQEEEu_e8CK",
     isFeatured: true,
     name: "Snowbird",
+    slug: "snowbird",
     description:
       "A heavy-duty jacket designed for skiing and other winter sports. Made from waterproof and windproof materials, this jacket will keep you warm and dry on the slopes.",
     availableColors: ["Black", "Purple", "Blue"],
@@ -142,6 +150,7 @@ export const inventory = [
     id: "dqu2KYjDkHms",
     isFeatured: false,
     name: "Rain or Shine",
+    slug: "rain-or-shine",
     description:
       "A versatile jacket designed for a variety of weather conditions. Made from water-resistant and breathable materials, this jacket can handle anything from a light drizzle to a heavy downpour.",
     availableColors: ["Black", "Gray", "Orange"],
@@ -159,6 +168,7 @@ export const inventory = [
     id: "CwOWGmzF0xoK",
     isFeatured: false,
     name: "Winter Explorer",
+    slug: "winter-explorer",
     description:
       "A warm and comfortable jacket designed for winter adventures. Made from insulated materials, this jacket will keep you cozy on even the coldest days.",
     availableColors: ["Black", "Green", "Red"],

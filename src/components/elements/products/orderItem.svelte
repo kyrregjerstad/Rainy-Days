@@ -1,8 +1,7 @@
 <script>
-  import { inventory } from "@stores/inventory";
   import { removeFromShoppingBag, updateQuantity } from "@stores/shopping-cart";
-  import { fly } from "svelte/transition";
   import { sineInOut } from "svelte/easing";
+  import { fly } from "svelte/transition";
   import AddToFavorites from "../buttons/AddToFavorites.svelte";
 
   export let allProducts;
@@ -13,14 +12,11 @@
 
   let quantityString = quantity.toString();
   const inventoryProduct = allProducts.find((item) => item.id === id);
-  const src = inventoryProduct.images[0].src;
+  const src = `/assets/images/products/${inventoryProduct.slug}.webp`;
   export const price = inventoryProduct.price;
 </script>
 
-<div
-  class="order-item"
-  out:fly={{ x: -700, duration: 650, easing: sineInOut }}
->
+<div class="order-item" out:fly={{ x: -700, duration: 650, easing: sineInOut }}>
   <div class="order-item-image">
     <a href="/browse/{inventoryProduct.name}">
       <img {src} alt="{inventoryProduct.name} Rain Jacket from Rainy Days" />

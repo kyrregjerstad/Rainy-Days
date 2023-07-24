@@ -1,9 +1,9 @@
 <script>
   import OrderItem from "@components/elements/products/orderItem.svelte";
   import { cart } from "@stores/shopping-cart";
+  import { inventory } from "@stores/inventory";
 
-  export let data;
-  $: ({ allProducts } = data);
+  $: allProducts = inventory;
 
   let totalPrice = 0;
   let subtotal = 0;
