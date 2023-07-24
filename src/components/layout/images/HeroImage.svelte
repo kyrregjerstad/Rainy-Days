@@ -1,5 +1,5 @@
 <script>
-  import Parallax from "$lib/scripts/animation/parallax";
+  import Parallax from "$lib/utils/parallax";
   import { onMount } from "svelte";
 
   export let title = "Rainy Days";
