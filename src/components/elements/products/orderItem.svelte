@@ -19,7 +19,7 @@
 
 <div
   class="order-item"
-  out:fly|local={{ x: -700, duration: 650, easing: sineInOut }}
+  out:fly={{ x: -700, duration: 650, easing: sineInOut }}
 >
   <div class="order-item-image">
     <a href="/browse/{inventoryProduct.name}">
