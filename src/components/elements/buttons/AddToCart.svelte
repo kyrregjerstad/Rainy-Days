@@ -1,6 +1,6 @@
 <script>
   import { cart, addToCart } from "@stores/shopping-cart";
-  import { handleCart } from "@scripts/handle-cart/handleCart";
+  import { handleCart } from "@utils/handle-cart/handleCart";
   import "@fontsource/material-icons-outlined";
   import QuantityButtons from "./QuantityButtons.svelte";
 

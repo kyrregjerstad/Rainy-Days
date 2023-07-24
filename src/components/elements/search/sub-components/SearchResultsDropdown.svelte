@@ -1,7 +1,7 @@
 <script>
   import SearchResult from "@components/elements/search/sub-components/SearchResult.svelte";
-  import { keyEventSwitch } from "@scripts/handleSearchNavigation/handleSearchNavigation";
-  import { lenisInit } from "@scripts/init/lenis-init";
+  import { keyEventSwitch } from "@utils/handleSearchNavigation";
+  import { lenisInit } from "@utils/lenis-init";
   import { onMount } from "svelte";
 
   export let searchResults = [];
