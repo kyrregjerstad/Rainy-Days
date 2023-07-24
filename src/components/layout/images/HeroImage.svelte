@@ -25,8 +25,6 @@
       sectionHeight = "unset";
   }
 
-  $: console.log(sectionHeight);
-
   const imageParallax = new Parallax({
     speed: 0.5,
     range: 800,
