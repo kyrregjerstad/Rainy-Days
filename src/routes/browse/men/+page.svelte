@@ -1,6 +1,4 @@
 <script lang="js">
-  // @ts-nocheck
-
   import Product from "@components/elements/products/Product.svelte";
   import { inventory } from "@stores/inventory";
   import { sortInventory } from "@utils/sorting";
@@ -13,8 +11,9 @@
 
   let sortedProducts = allProducts || [];
 
-  $: $filterOptions,
-    (sortedProducts = sortInventory(allProducts, $filterOptions, "Men"));
+  $: sortedProducts = sortInventory(allProducts, $filterOptions, "Men");
+
+  $: console.log(sortedProducts);
 </script>
 
 <svelte:head>
@@ -47,15 +46,6 @@
         <Product {product} />
       {/if}
     {/each}
-    <!-- {#each sortedInventory as product}
-      {#if product.gender === "Men" || product.gender === "Unisex"}
-        <Product
-          productName={product.name}
-          productPrice={product.price}
-          productId={product.id}
-        />
-      {/if}
-    {/each} -->
   </div>
 </div>
 

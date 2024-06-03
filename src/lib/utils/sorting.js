@@ -27,7 +27,7 @@ function sortBySize(inventory, sizes = []) {
   sizes = sizes.map((size) => size.toUpperCase());
 
   return inventory.filter((product) =>
-    sizes.some((size) => product.attributes[4].options.includes(size))
+    sizes.some((size) => product.availableSizes.includes(size))
   );
 }
 
@@ -40,7 +40,7 @@ function sortBySeason(inventory, seasons = []) {
   );
 
   return inventory.filter((product) =>
-    seasons.some((season) => product.attributes[3].options[0].includes(season))
+    seasons.some((season) => product.season.includes(season))
   );
 }
 
@@ -54,7 +54,7 @@ function sortByColor(inventory, colors = []) {
   );
 
   return inventory.filter((product) =>
-    colors.some((color) => product.attributes[0].options.includes(color))
+    colors.some((color) => product.availableColors.includes(color))
   );
 }
 
